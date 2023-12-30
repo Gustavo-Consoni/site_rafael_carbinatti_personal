@@ -12,6 +12,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Teko:wght@300;400;500;600;700&display=swap">
+        
         <title>Consultoria - Rafael Cabinatti</title>
         <style>
             [x-cloak] {
@@ -36,7 +37,7 @@
         <div class="relative bg-[#24292d]" id="section1">
 
             <!-- Fundo -->
-            <img class="w-full h-[94vh] xl:h-screen object-cover rounded-b-[2.5rem]" src="arquivos/imagens/fundo.jpg">
+            <img class="w-full h-[90vh] xl:h-screen object-cover rounded-b-[2.5rem]" src="arquivos/imagens/fundo.jpg">
 
             <!-- Capa -->
             <img class="absolute bottom-0 xl:left-28 2xl:left-44 z-10 max-h-[105vh]" :src="window.innerWidth <= 1024 ? 'arquivos/imagens/inteiro2.png' : 'arquivos/imagens/inteiro.png'">
@@ -48,13 +49,13 @@
                     <p class="text-7xl xl:text-[10rem] 2xl:text-[12rem] bg-clip-text text-transparent bg-gradient-to-r from-[#FFF95E] from-[1%] to-[#F7F77B] to-[60%]">MELHOR</p>
                     <p class="text-5xl xl:text-[5rem] 2xl:text-[5rem] text-center xl:text-right xl:-mt-12">TREINO</p>
                 </div>
-                <p class="max-xl:hidden text-right font-montserrat tracking-widest">Conheça uma metodologia de treino que vai lhe tirar da zona de conforto, <br> buscando praticidade, estímulos diversificados e resultados muito <br> mais rápidos comparado aos treinos convencionais.</p>
+                <p class="max-xl:hidden text-lg text-right font-montserrat tracking-widest">Conheça uma metodologia de treino que vai lhe tirar da zona de conforto, <br> buscando praticidade, estímulos diversificados e resultados muito <br> mais rápidos comparado aos treinos convencionais.</p>
                 <a class="text-2xl text-[#3C381B] font-bold font-teko tracking-wide rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1 mt-8" href="#planos">COMECE AGORA!</a>
             </div>
 
             <!-- Navbar -->
             <div :class="scrolled ? 'xl:py-6' : 'xl:pt-9 xl:pb-3'" class="bg-gradient-to-b from-black to-transparent w-full fixed top-0 z-30 flex items-center justify-between text-[#e2e2e2] duration-500 py-6 px-6 xl:px-12">
-                <img class="w-24" src="arquivos/icones/logo.png">
+                <img class="w-20 xl:w-24" src="arquivos/icones/logo.png">
                 <div class="max-xl:hidden flex items-center text-2xl font-medium space-x-24">
                     <a :class="{'text-[#cec35f]': activeSection == 'section1'}" class="font-teko duration-500 p-2" href="#section1">INÍCIO</a>
                     <a :class="{'text-[#cec35f]': activeSection == 'section2'}" class="font-teko duration-500 p-2" href="#section2">QUEM SOU?</a>
@@ -143,7 +144,7 @@
 
 
         <!-- Quem Sou? -->
-        <div class="bg-[#24292d] py-20 xl:py-40" id="section2">
+        <div class="bg-[#24292d] py-16 xl:py-40" id="section2">
             <div class="w-[85%] xl:w-[75%] flex max-xl:flex-col-reverse items-center mx-auto max-xl:space-y-reverse max-xl:space-y-8 xl:space-x-12">
 
                 <div class="xl:w-1/2 space-y-6">
@@ -167,28 +168,28 @@
         <!-- Depoimentos -->
         <div class="bg-[#24292d]">
             <div class="bg-[#202020] rounded-[2.5rem] py-16 xl:py-40" id="section3">
-                <div class="w-[85%] xl:w-[60%] text-[#e0e0e0] mx-auto space-y-12 md:space-y-24">
+                <div class="w-[85%] xl:w-[60%] text-[#e0e0e0] mx-auto space-y-12 xl:space-y-16">
     
                     <!-- Titulo -->
                     <div class="text-center tracking-widest space-y-4">
-                        <p class="text-4xl xl:text-5xl font-semibold font-teko">VEJA O <span class="text-[#cec35f]">RESULTADO</span> DOS MEUS <span class="text-[#cec35f]">ALUNOS</span></p>
-                        <p class="text-sm xl:text-base font-montserrat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proim sed neque ddue jfiu nsijde nijosaj fivsa eo.</p>
+                        <p class="text-4xl xl:text-6xl font-teko font-semibold">VEJA O <span class="text-[#cec35f]">RESULTADO</span> DOS MEUS <span class="text-[#cec35f]">ALUNOS</span></p>
+                        <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proim sed neque ddue jfiu nsijde nijosaj fivsa eo.</p>
                     </div>
 
                     <!-- Antes e Depois 1 -->
-                    <div class="grid md:grid-cols-2 items-center gap-12">
+                    <div class="grid md:grid-cols-2 items-center gap-8">
                         <div class="order-2 space-y-2">
-                            <p class="text-4xl max-md:text-center font-teko">CHRIS BUMSTEAD</p>
-                            <p class="font-montserrat">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <p class="text-4xl max-md:text-center font-teko tracking-wide">CHRIS BUMSTEAD</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
                         </div>
                         <img class="order-1 rounded-xl" src="arquivos/imagens/thumb.jpg">
                     </div>
 
                     <!-- Antes e Depois 2 -->
-                    <div class="grid md:grid-cols-2 items-center gap-12">
+                    <div class="grid md:grid-cols-2 items-center gap-8">
                         <div class="max-md:order-2 space-y-2">
-                            <p class="text-4xl max-md:text-center font-teko">CHRIS BUMSTEAD</p>
-                            <p class="font-montserrat">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <p class="text-4xl max-md:text-center font-teko tracking-wide">CHRIS BUMSTEAD</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
                         </div>
                         <img class="max-md:order-1 rounded-xl" src="arquivos/imagens/thumb.jpg">
                     </div>
@@ -209,7 +210,7 @@
                     </div>
 
                     <!-- Depoimentos em Texto -->
-                    <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-12">
+                    <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-8">
 
                         <div class="rounded-2xl shadow-2xl bg-[#24292d] px-8 pt-8 pb-16 space-y-6">
                             <div class="flex items-center space-x-6">
@@ -221,7 +222,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[#e0e0e0] font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
                         </div>
 
                         <div class="rounded-2xl shadow-2xl bg-[#24292d] px-8 pt-8 pb-16 space-y-6">
@@ -234,7 +235,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[#e0e0e0] font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
                         </div>
 
                         <div class="rounded-2xl shadow-2xl bg-[#24292d] px-8 pt-8 pb-16 space-y-6">
@@ -247,7 +248,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[#e0e0e0] font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
                         </div>
 
                         <div class="rounded-2xl shadow-2xl bg-[#24292d] px-8 pt-8 pb-16 space-y-6">
@@ -260,7 +261,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[#e0e0e0] font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
                         </div>
 
                         <div class="rounded-2xl shadow-2xl bg-[#24292d] px-8 pt-8 pb-16 space-y-6">
@@ -273,7 +274,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[#e0e0e0] font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
                         </div>
 
                         <div class="rounded-2xl shadow-2xl bg-[#24292d] px-8 pt-8 pb-16 space-y-6">
@@ -286,7 +287,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[#e0e0e0] font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
+                            <p class="font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcor</p>
                         </div>
 
                     </div>

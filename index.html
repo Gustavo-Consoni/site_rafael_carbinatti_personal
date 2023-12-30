@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="arquivos/icones/logo.png">
-        <title>Consultoria - Rafael Cabinatti</title>
+        <title>Consultoria - Rafael Carbinatti</title>
         <!-- Alpinejs -->
         <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"></script>
@@ -34,34 +34,37 @@
                          ">
         
         <!-- Inicio -->
-        <div class="relative bg-[#24292d]" id="section1">
+        <div class="relative bg-[#24292d]" id="inicio">
 
             <!-- Fundo -->
             <img class="w-full h-[85vh] xl:h-screen object-cover rounded-b-[2.5rem]" src="arquivos/imagens/fundo.jpg">
 
             <!-- Capa -->
-            <img class="absolute bottom-0 xl:left-28 2xl:left-44 z-10 max-h-[105vh]" :src="window.innerWidth <= 1024 ? 'arquivos/imagens/inteiro2.png' : 'arquivos/imagens/inteiro.png'">
+            <img class="absolute bottom-12 xl:bottom-0 xl:left-28 2xl:left-44 z-10 max-h-[105vh]" :src="window.innerWidth <= 1024 ? 'arquivos/imagens/inteiro2.png' : 'arquivos/imagens/inteiro.png'">
+
+            <!-- Pelicula -->
+            <div class="xl:hidden absolute bottom-0 left-0 z-10 w-full h-1/2 rounded-b-[2.5rem] bg-gradient-to-t from-stone-900 to-transparent"></div>    
 
             <!-- Texto -->
-            <div class="absolute inset-0 z-20 flex flex-col items-center xl:items-end justify-end xl:justify-center text-[#e2e2e2] p-6 xl:p-12">
+            <div class="absolute inset-0 z-20 flex flex-col items-center xl:items-end justify-end xl:justify-center text-[#e2e2e2] p-12">
                 <div class="font-bold font-teko tracking-widest">
-                    <p class="text-5xl xl:text-[5rem] 2xl:text-[5rem] max-xl:text-center xl:-mb-8">O SEU</p>
-                    <p class="text-7xl xl:text-[10rem] 2xl:text-[12rem] bg-clip-text text-transparent bg-gradient-to-r from-[#FFF95E] from-[1%] to-[#F7F77B] to-[60%]">MELHOR</p>
-                    <p class="text-5xl xl:text-[5rem] 2xl:text-[5rem] text-center xl:text-right xl:-mt-12">TREINO</p>
+                    <p class="text-5xl xl:text-[5rem] 2xl:text-[5rem] max-xl:text-center -mb-3 xl:-mb-8">O SEU</p>
+                    <p class="text-7xl xl:text-[10rem] 2xl:text-[12rem] text-transparent bg-clip-text bg-gradient-to-r from-[#FFF95E] from-[1%] to-[#F7F77B] to-[60%]">MELHOR</p>
+                    <p class="text-5xl xl:text-[5rem] 2xl:text-[5rem] text-center xl:text-right -mt-3 xl:-mt-12">TREINO</p>
                 </div>
                 <p class="max-xl:hidden text-lg text-right font-montserrat tracking-widest">Conheça uma metodologia de treino que vai lhe tirar da zona de conforto, <br> buscando praticidade, estímulos diversificados e resultados muito <br> mais rápidos comparado aos treinos convencionais.</p>
-                <a class="text-2xl text-[#3C381B] font-bold font-teko tracking-wide rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1 mt-8" href="#planos">COMECE AGORA!</a>
+                <a class="text-2xl text-[#3C381B] font-bold font-teko tracking-wide rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1 mt-4 xl:mt-8" href="#planos">COMECE AGORA!</a>
             </div>
 
             <!-- Navbar -->
             <div :class="scrolled ? 'xl:py-6' : 'xl:pt-9 xl:pb-3'" class="bg-gradient-to-b from-black to-transparent w-full fixed top-0 z-30 flex items-center justify-between text-[#e2e2e2] duration-500 py-6 px-6 xl:px-12">
                 <img class="w-20 xl:w-24" src="arquivos/icones/logo.png">
-                <div class="max-xl:hidden flex items-center text-2xl font-medium space-x-24">
-                    <a :class="{'text-[#cec35f]': activeSection == 'section1'}" class="font-teko duration-500 p-2" href="#section1">INÍCIO</a>
-                    <a :class="{'text-[#cec35f]': activeSection == 'section2'}" class="font-teko duration-500 p-2" href="#section2">QUEM SOU?</a>
-                    <a :class="{'text-[#cec35f]': activeSection == 'section3'}" class="font-teko duration-500 p-2" href="#section3">DEPOIMENTOS</a>
-                    <a :class="{'text-[#cec35f]': activeSection == 'section4'}" class="font-teko duration-500 p-2" href="#section4">BENEFÍCIOS</a>
-                    <a :class="{'text-[#cec35f]': activeSection == 'section5'}" class="font-teko duration-500 p-2" href="#section5">PLANOS</a>
+                <div class="max-xl:hidden flex items-center text-2xl font-medium font-teko space-x-24">
+                    <a :class="{'text-[#cec35f]': activeSection == 'inicio'}" class="duration-500 p-2" href="#inicio">INÍCIO</a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'apresentacao'}" class="duration-500 p-2" href="#apresentacao">APRESENTAÇÃO</a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'depoimentos'}" class="duration-500 p-2" href="#depoimentos">DEPOIMENTOS</a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'section4'}" class="duration-500 p-2" href="#section4">BENEFÍCIOS</a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'section5'}" class="duration-500 p-2" href="#section5">PLANOS</a>
                 </div>
                 <button class="xl:hidden" @click="sidebar = !sidebar">
                     <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -143,8 +146,8 @@
         </div>
 
 
-        <!-- Quem Sou? -->
-        <div class="bg-[#24292d] py-16 xl:py-40" id="section2">
+        <!-- Apresentação -->
+        <div class="bg-[#24292d] py-16 xl:py-40" id="apresentacao">
             <div class="w-[85%] xl:w-[75%] flex max-xl:flex-col-reverse items-center mx-auto max-xl:space-y-reverse max-xl:space-y-8 xl:space-x-12">
 
                 <div class="xl:w-1/2 space-y-6">
@@ -166,8 +169,8 @@
 
 
         <!-- Depoimentos -->
-        <div class="bg-[#24292d]">
-            <div class="bg-[#202020] rounded-[2.5rem] py-16 xl:py-40" id="section3">
+        <div class="bg-[#24292d]" id="depoimentos">
+            <div class="bg-[#202020] rounded-[2.5rem] py-16 xl:py-24">
                 <div class="w-[85%] xl:w-[60%] text-[#e0e0e0] mx-auto space-y-12 xl:space-y-16">
     
                     <!-- Titulo -->
@@ -311,18 +314,18 @@
         <script>
             function getActiveSection() {
                 const scrollPosition = window.scrollY
-                const section1 = document.getElementById('section1')
-                const section2 = document.getElementById('section2')
-                const section3 = document.getElementById('section3')
+                const inicio = document.getElementById('inicio')
+                const apresentacao = document.getElementById('apresentacao')
+                const depoimentos = document.getElementById('depoimentos')
                 const section4 = document.getElementById('section4')
                 const section5 = document.getElementById('section5')
             
-                if (scrollPosition < section2.offsetTop - 120)
-                    return 'section1'
-                else if (scrollPosition < section3.offsetTop - 120)
-                    return 'section2'
+                if (scrollPosition < apresentacao.offsetTop - 120)
+                    return 'inicio'
+                else if (scrollPosition < depoimentos.offsetTop - 120)
+                    return 'apresentacao'
                 else if (scrollPosition < section4.offsetTop - 120)
-                    return 'section3'
+                    return 'depoimentos'
                 else if (scrollPosition < section5.offsetTop - 120)
                     return 'section4'
                 else

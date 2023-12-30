@@ -568,12 +568,12 @@ video {
   bottom: 0px;
 }
 
-.bottom-12 {
-  bottom: 3rem;
-}
-
 .bottom-\[10\%\] {
   bottom: 10%;
+}
+
+.bottom-\[5\%\] {
+  bottom: 5%;
 }
 
 .left-0 {
@@ -673,8 +673,8 @@ video {
   height: 100%;
 }
 
-.max-h-\[105vh\] {
-  max-height: 105vh;
+.max-h-\[80vh\] {
+  max-height: 80vh;
 }
 
 .w-16 {
@@ -1171,8 +1171,8 @@ video {
     bottom: 0px;
   }
 
-  .xl\:left-28 {
-    left: 7rem;
+  .xl\:left-\[10\%\] {
+    left: 10%;
   }
 
   .xl\:-mb-8 {
@@ -1193,6 +1193,10 @@ video {
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:max-h-\[105vh\] {
+    max-height: 105vh;
   }
 
   .xl\:w-1\/2 {
@@ -1292,10 +1296,6 @@ video {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:left-44 {
-    left: 11rem;
-  }
-
   .\32xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

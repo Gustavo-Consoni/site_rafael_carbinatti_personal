@@ -544,6 +544,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -671,6 +675,10 @@ video {
 
 .h-\[90vh\] {
   height: 90vh;
+}
+
+.h-\[85vh\] {
+  height: 85vh;
 }
 
 .max-h-\[105vh\] {

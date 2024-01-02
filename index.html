@@ -31,7 +31,7 @@
                          ">
         
         <!-- Inicio -->
-        <div class="relative bg-[#24292d]" id="inicio">
+        <div class="relative bg-[#202020]" id="inicio">
 
             <!-- Fundo -->
             <img class="w-full h-[80vh] xl:h-screen object-cover rounded-b-[2.5rem]" src="arquivos/imagens/fundo.jpg">
@@ -43,25 +43,26 @@
             <div class="xl:hidden z-10 absolute bottom-0 left-0 w-full h-1/2 rounded-b-[2.5rem] bg-gradient-to-t from-stone-900 to-transparent"></div>    
 
             <!-- Texto -->
-            <div class="absolute z-20 inset-0 flex flex-col items-center xl:items-end justify-end xl:justify-center text-[#e2e2e2] p-12">
+            <div class="absolute z-20 inset-0 flex flex-col items-center xl:items-end justify-end xl:justify-center text-[#e2e2e2] p-8">
                 <div class="font-bold font-teko tracking-widest">
                     <p class="text-5xl xl:text-[5rem] 2xl:text-[5rem] max-xl:text-center -mb-3 xl:-mb-8">O SEU</p>
                     <p class="text-7xl xl:text-[10rem] 2xl:text-[12rem] text-transparent bg-clip-text bg-gradient-to-r from-[#FFF95E] from-[1%] to-[#F7F77B] to-[60%]">MELHOR</p>
                     <p class="text-5xl xl:text-[5rem] 2xl:text-[5rem] text-center xl:text-right -mt-3 xl:-mt-12">TREINO</p>
                 </div>
                 <p class="max-xl:hidden text-lg text-right font-montserrat tracking-widest">Conheça uma metodologia de treino que vai lhe tirar da zona de conforto, <br> buscando praticidade, estímulos diversificados e resultados muito <br> mais rápidos comparado aos treinos convencionais.</p>
-                <a class="text-2xl text-[#3C381B] font-bold font-teko tracking-wide rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1 mt-4 xl:mt-8" href="#planos">COMECE AGORA!</a>
+                <a class="text-2xl xl:text-3xl text-[#3C381B] font-bold font-teko tracking-wide rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1 mt-4 xl:mt-8" href="#planos">COMECE AGORA!</a>
             </div>
 
             <!-- Navbar -->
             <div :class="scrolled ? 'xl:py-6' : 'xl:pt-9 xl:pb-3'" class="bg-gradient-to-b from-black to-transparent w-full fixed top-0 z-30 flex items-center justify-between text-[#e2e2e2] duration-500 py-6 px-6 xl:px-12">
                 <img class="w-20 xl:w-24" src="arquivos/icones/logo.png">
-                <div class="max-xl:hidden flex items-center text-2xl font-medium font-teko space-x-24">
+                <div class="max-xl:hidden flex items-center text-2xl font-medium font-teko space-x-16">
                     <a :class="{'text-[#cec35f]': activeSection == 'inicio'}" class="duration-500 p-2" href="#inicio">INÍCIO</a>
                     <a :class="{'text-[#cec35f]': activeSection == 'apresentacao'}" class="duration-500 p-2" href="#apresentacao">APRESENTAÇÃO</a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'planos'}" class="duration-500 p-2" href="#planos">PLANOS</a>
                     <a :class="{'text-[#cec35f]': activeSection == 'depoimentos'}" class="duration-500 p-2" href="#depoimentos">DEPOIMENTOS</a>
-                    <a :class="{'text-[#cec35f]': activeSection == 'section4'}" class="duration-500 p-2" href="#section4">BENEFÍCIOS</a>
-                    <a :class="{'text-[#cec35f]': activeSection == 'section5'}" class="duration-500 p-2" href="#section5">PLANOS</a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'aplicativo'}" class="duration-500 p-2" href="#aplicativo">APLICATIVO</a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'duvidas'}" class="duration-500 p-2" href="#duvidas">DÚVIDAS</a>
                 </div>
                 <button class="xl:hidden" @click="sidebar = !sidebar">
                     <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -71,31 +72,53 @@
             </div>
 
             <!-- Mobile -->
-            <div :class="{'-translate-x-64': sidebar}" class="xl:hidden fixed top-0 -right-64 z-40 w-64 h-full text-white bg-[#092934] duration-500 space-y-8">
+            <div :class="{'-translate-x-64': sidebar}" class="xl:hidden fixed top-0 -right-64 z-40 w-64 h-full text-[#e2e2e2] bg-[#202020] duration-500 space-y-8">
                 <div class="flex items-center justify-between px-6 pt-6">
-                    <p class="text-2xl font-semibold">MENU</p>
+                    <p class="text-3xl fonte-teko font-bold">MENU</p>
                     <button @click="sidebar = !sidebar">
                         <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
-                <div class="flex flex-col text-sm px-4 space-y-4">
-                    <a class="flex items-center border-b p-2 space-x-4" href="#apresentacao" @click="sidebar = !sidebar">
-                        <img class="w-6 h-6" src="">
-                        <p>APRESENTAÇÃO</p>
+                <div class="flex flex-col px-4 space-y-4">
+                    <a :class="{'text-[#cec35f]': activeSection == 'inicio'}" class="flex items-center duration-500 p-2 space-x-4" href="#inicio" @click="sidebar = !sidebar">
+                        <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                            <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                        </svg>
+                        <p class="fonte-teko font-medium">INÍCIO</p>
                     </a>
-                    <a class="flex items-center border-b p-2 space-x-4" href="#depoimentos" @click="sidebar = !sidebar">
-                        <img class="w-6 h-6" src="">
-                        <p>DEPOIMENTOS</p>
+                    <a :class="{'text-[#cec35f]': activeSection == 'apresentacao'}" class="flex items-center duration-500 p-2 space-x-4" href="#apresentacao" @click="sidebar = !sidebar">
+                        <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="fonte-teko font-medium">APRESENTAÇÃO</p>
                     </a>
-                    <a class="flex items-center border-b p-2 space-x-4" href="#planos" @click="sidebar = !sidebar">
-                        <img class="w-6 h-6" src="">
-                        <p>PLANOS</p>
+                    <a :class="{'text-[#cec35f]': activeSection == 'planos'}" class="flex items-center duration-500 p-2 space-x-4" href="#planos" @click="sidebar = !sidebar">
+                        <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="fonte-teko font-medium">PLANOS</p>
                     </a>
-                    <a class="flex items-center border-b p-2 space-x-4" href="#duvidas" @click="sidebar = !sidebar">
-                        <img class="w-6 h-6" src="">
-                        <p>DÚVIDAS</p>
+                    <a :class="{'text-[#cec35f]': activeSection == 'depoimentos'}" class="flex items-center duration-500 p-2 space-x-4" href="#depoimentos" @click="sidebar = !sidebar">
+                        <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="fonte-teko font-medium">DEPOIMENTOS</p>
+                    </a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'aplicativo'}" class="flex items-center duration-500 p-2 space-x-4" href="#aplicativo" @click="sidebar = !sidebar">
+                        <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" />
+                            <path fill-rule="evenodd" d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 0 1 7.5 19.875V4.125Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="fonte-teko font-medium">APLICATIVO</p>
+                    </a>
+                    <a :class="{'text-[#cec35f]': activeSection == 'duvidas'}" class="flex items-center duration-500 p-2 space-x-4" href="#duvidas" @click="sidebar = !sidebar">
+                        <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="fonte-teko font-medium">DÚVIDAS</p>
                     </a>
                 </div>
                 <div class="flex items-center justify-center text-white space-x-4">
@@ -144,13 +167,13 @@
 
 
         <!-- Apresentação -->
-        <div class="bg-[#24292d] py-16 xl:py-40" id="apresentacao">
-            <div class="w-[85%] xl:w-[75%] grid md:grid-cols-2 items-center mx-auto gap-8">
+        <div class="bg-[#202020] py-20 xl:py-40" id="apresentacao">
+            <div class="w-[85%] xl:w-[80%] grid lg:grid-cols-2 items-center mx-auto gap-8">
 
-                <div class="max-md:order-2 space-y-6">
-                    <div class="max-xl:text-center tracking-wide">
-                        <p class="text-4xl xl:text-5xl text-[#cec35f] font-teko">RAFAEL CARBINATTI</p>
-                        <p class="text-xl xl:text-2xl text-[#a0a0a0] font-teko -mt-2">CREF: 129224-G/SP</p>
+                <div class="max-lg:order-2 space-y-6">
+                    <div class="max-lg:text-center font-teko tracking-wide">
+                        <p class="text-4xl xl:text-5xl text-[#cec35f]">RAFAEL CARBINATTI</p>
+                        <p class="text-xl xl:text-2xl text-[#a0a0a0] -mt-2">CREF: 129224-G/SP</p>
                     </div>
                     <div class="max-xl:text-sm text-[#e0e0e0] font-montserrat leading-7 tracking-widest space-y-6">
                         <p>Para quem não me conhece, meu nome é Rafael Carbinatti. Sou formado em Educação Fisica / Pós-graduado em Gestão Esportiva / Pós Graduando em Medicina Esportiva.</p>
@@ -166,24 +189,24 @@
 
 
         <!-- Planos -->
-        <div class="py-16 xl:py-40" id="planos">
-            <div class="w-[85%] xl:w-[90%] mx-auto">
+        <div class="bg-[#24292d] py-16 xl:py-32" id="planos">
+            <div class="w-[85%] 2xl:w-[80%] text-[#e0e0e0] mx-auto space-y-12">
 
-                <div class="text-center tracking-widest space-y-4">
-                    <p class="text-4xl xl:text-6xl font-teko font-semibold">ESCOLHA SEU PLANO</p>
-                    <p class="text-xs font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proim sed neque ddue jfiu nsijde nijosaj fivsa eo.</p>
+                <div class="text-center tracking-widest space-y-2">
+                    <p class="text-4xl xl:text-7xl font-teko font-semibold tracking-widest">ESCOLHA SEU PLANO</p>
+                    <p class="text-xs xl:text-lg font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proim sed neque ddue jfiu nsijde nijosaj fivsa eo.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <div class="grid md:grid-cols-2 xl:grid-cols-4 font-teko gap-8">
 
-                    <div class="rounded-3xl bg-[#24292d] p-8 space-y-8">
-                        <p class="text-4xl text-center font-teko border-b m-4 p-4">MENSAL</p>
+                    <div class="rounded-3xl shadow-2xl bg-[#202020] p-4 space-y-8">
+                        <p class="text-5xl text-center font-semibold tracking-wide border-b-2 m-4 p-4">MENSAL</p>
                         <div class="flex justify-center font-medium">
                             <p class="text-2xl mr-2">R$</p>
-                            <p class="text-7xl font-bold">135</p>
+                            <p class="text-7xl font-bold">150</p>
                             <p class="flex items-end text-2xl">/ mês</p>
                         </div>
-                        <div class="flex flex-col items-center space-y-4">
+                        <div class="flex flex-col items-center font-montserrat space-y-4">
                             <div class="flex items-center space-x-4">
                                 <div class="text-white shrink-0 rounded-full bg-gradient-to-br from-[#00EBFF] from-[1%] to-[#172439] to-[60%] p-1.5">
                                     <img class="w-3 h-3" src="arquivos/icones/check.png">
@@ -214,14 +237,14 @@
                         </div>
                     </div>
 
-                    <div class="rounded-3xl bg-[#24292d] p-8 space-y-8">
-                        <p class="text-4xl text-center font-teko border-b m-4 p-4">TRIMESTRAL</p>
+                    <div class="text-[#202020] rounded-3xl shadow-2xl bg-[#cec35f] p-4 space-y-8">
+                        <p class="text-5xl text-center font-semibold tracking-wide border-b-2 m-4 p-4">TRIMESTRAL</p>
                         <div class="flex justify-center font-medium">
                             <p class="text-2xl mr-2">R$</p>
-                            <p class="text-7xl font-bold">135</p>
+                            <p class="text-7xl font-bold">120</p>
                             <p class="flex items-end text-2xl">/ mês</p>
                         </div>
-                        <div class="flex flex-col items-center space-y-4">
+                        <div class="flex flex-col items-center font-montserrat space-y-4">
                             <div class="flex items-center space-x-4">
                                 <div class="text-white shrink-0 rounded-full bg-gradient-to-br from-[#00EBFF] from-[1%] to-[#172439] to-[60%] p-1.5">
                                     <img class="w-3 h-3" src="arquivos/icones/check.png">
@@ -252,14 +275,14 @@
                         </div>
                     </div>
 
-                    <div class="rounded-3xl bg-[#24292d] p-8 space-y-8">
-                        <p class="text-4xl text-center font-teko border-b m-4 p-4">SEMESTRAL</p>
+                    <div class="rounded-3xl shadow-2xl bg-[#202020] p-4 space-y-8">
+                        <p class="text-5xl text-center font-semibold tracking-wide border-b-2 m-4 p-4">SEMESTRAL</p>
                         <div class="flex justify-center font-medium">
                             <p class="text-2xl mr-2">R$</p>
-                            <p class="text-7xl font-bold">135</p>
+                            <p class="text-7xl font-bold">108</p>
                             <p class="flex items-end text-2xl">/ mês</p>
                         </div>
-                        <div class="flex flex-col items-center space-y-4">
+                        <div class="flex flex-col items-center font-montserrat space-y-4">
                             <div class="flex items-center space-x-4">
                                 <div class="text-white shrink-0 rounded-full bg-gradient-to-br from-[#00EBFF] from-[1%] to-[#172439] to-[60%] p-1.5">
                                     <img class="w-3 h-3" src="arquivos/icones/check.png">
@@ -290,14 +313,14 @@
                         </div>
                     </div>
 
-                    <div class="rounded-3xl bg-[#24292d] p-8 space-y-8">
-                        <p class="text-4xl text-center font-teko border-b m-4 p-4">ANUAL</p>
+                    <div class="rounded-3xl shadow-2xl bg-[#202020] p-4 space-y-8">
+                        <p class="text-5xl text-center font-semibold tracking-wide border-b-2 m-4 p-4">ANUAL</p>
                         <div class="flex justify-center font-medium">
                             <p class="text-2xl mr-2">R$</p>
-                            <p class="text-7xl font-bold">135</p>
+                            <p class="text-7xl font-bold">83</p>
                             <p class="flex items-end text-2xl">/ mês</p>
                         </div>
-                        <div class="flex flex-col items-center space-y-4">
+                        <div class="flex flex-col items-center font-montserrat space-y-4">
                             <div class="flex items-center space-x-4">
                                 <div class="text-white shrink-0 rounded-full bg-gradient-to-br from-[#00EBFF] from-[1%] to-[#172439] to-[60%] p-1.5">
                                     <img class="w-3 h-3" src="arquivos/icones/check.png">
@@ -336,11 +359,11 @@
 
         <!-- Depoimentos -->
         <div class="bg-[#24292d]" id="depoimentos">
-            <div class="bg-[#202020] rounded-[2.5rem] py-16 xl:py-24">
+            <div class="bg-[#202020] rounded-[2.5rem] py-20 xl:py-40">
                 <div class="w-[85%] xl:w-[60%] text-[#e0e0e0] mx-auto space-y-12 xl:space-y-16">
     
                     <!-- Titulo -->
-                    <div class="text-center tracking-widest space-y-4">
+                    <div class="text-center tracking-widest">
                         <p class="text-4xl xl:text-6xl font-teko font-semibold">VEJA O <span class="text-[#cec35f]">RESULTADO</span> DOS MEUS <span class="text-[#cec35f]">ALUNOS</span></p>
                         <p class="text-xs font-montserrat font-light leading-7 tracking-widest">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proim sed neque ddue jfiu nsijde nijosaj fivsa eo.</p>
                     </div>
@@ -467,43 +490,41 @@
 
 
         <!-- Demonstração do Aplicativo -->
-        <div class="">
+        <div class="" id="aplicativo">
             <video class="" autoplay loop muted playinline>
                 <source src="arquivos/videos/aplicativo.mp4" type="video/mp4">
               </video>
         </div>
 
 
-        <!-- Beneficios -->
-        <div class="bg-[#24292d] h-[200vh]" id="section4">
-
-        </div>
-
-
         <!-- Planos -->
-        <div class="bg-[#24292d] h-[200vh]" id="section5">
+        <div class="bg-[#24292d] h-[200vh]" id="duvidas">
 
         </div>
+
 
         <script>
             function getActiveSection() {
                 const scrollPosition = window.scrollY
                 const inicio = document.getElementById('inicio')
                 const apresentacao = document.getElementById('apresentacao')
+                const planos = document.getElementById('planos')
                 const depoimentos = document.getElementById('depoimentos')
-                const section4 = document.getElementById('section4')
-                const section5 = document.getElementById('section5')
+                const aplicativo = document.getElementById('aplicativo')
+                const duvidas = document.getElementById('duvidas')
             
                 if (scrollPosition < apresentacao.offsetTop - 120)
                     return 'inicio'
-                else if (scrollPosition < depoimentos.offsetTop - 120)
+                else if (scrollPosition < planos.offsetTop - 120)
                     return 'apresentacao'
-                else if (scrollPosition < section4.offsetTop - 120)
+                else if (scrollPosition < depoimentos.offsetTop - 120)
+                    return 'planos'
+                else if (scrollPosition < aplicativo.offsetTop - 120)
                     return 'depoimentos'
-                else if (scrollPosition < section5.offsetTop - 120)
-                    return 'section4'
+                else if (scrollPosition < duvidas.offsetTop - 120)
+                    return 'aplicativo'
                 else
-                    return 'section5'
+                    return 'duvidas'
             }
         </script>
 

@@ -54,24 +54,53 @@ document.addEventListener('alpine:init', () => {
             {
                 nome: 'Teste',
                 texto: 'Um treino direcionado faz total diferença quando se fala em resultados sólidos! A partir do momento que parei de bater a cabeça sozinha por achar que sabia treinar e procurei um treino direcionado para meu objetivo, minha estética mudou com excelência!! Obrigada Rafa 💪🏼💪🏼',
-                url_antes: 'arquivos/imagens/antes-depois/1.jpg',
-                url_depois: 'arquivos/imagens/antes-depois/2.jpg',
+                imagem_antes: 'arquivos/imagens/antes-depois/1.jpg',
+                imagem_depois: 'arquivos/imagens/antes-depois/2.jpg',
             },
             {
                 nome: 'Teste',
                 texto: 'Um treino direcionado faz total diferença quando se fala em resultados sólidos! A partir do momento que parei de bater a cabeça sozinha por achar que sabia treinar e procurei um treino direcionado para meu objetivo, minha estética mudou com excelência!! Obrigada Rafa 💪🏼💪🏼',
-                url_antes: 'arquivos/imagens/antes-depois/1.jpg',
-                url_depois: 'arquivos/imagens/antes-depois/2.jpg',
+                imagem_antes: 'arquivos/imagens/antes-depois/3.jpg',
+                imagem_depois: 'arquivos/imagens/antes-depois/4.jpg',
             },
             {
                 nome: 'Teste',
                 texto: 'Um treino direcionado faz total diferença quando se fala em resultados sólidos! A partir do momento que parei de bater a cabeça sozinha por achar que sabia treinar e procurei um treino direcionado para meu objetivo, minha estética mudou com excelência!! Obrigada Rafa 💪🏼💪🏼',
-                url_antes: 'arquivos/imagens/antes-depois/1.jpg',
-                url_depois: 'arquivos/imagens/antes-depois/2.jpg',
+                imagem_antes: 'arquivos/imagens/antes-depois/5.jpg',
+                imagem_depois: 'arquivos/imagens/antes-depois/6.jpg',
             },
         ],
         depoimentos_texto: [
-
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
+            },
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
+            },
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
+            },
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
+            },
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
+            },
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
+            },
         ],
         vantagens_aplicativo: [
             {
@@ -115,6 +144,18 @@ document.addEventListener('alpine:init', () => {
             {
                 pergunta: 'CONTINUO COM DÚVIDAS, COMO FAÇO PARA ESCLARECÊ-LAS ANTES DA AQUISIÇÃO?',
                 resposta: 'Meu suporte estará à sua disposição para responder todas as suas dúvidas. Só acessar o meu Instagram, e me enviar um direct. ',
+            },
+        ],
+        depoimentos_rodape: [
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
+            },
+            {
+                nome: '',
+                imagem_perfil: '',
+                depoimento: '',
             },
         ],
 

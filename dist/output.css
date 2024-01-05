@@ -711,8 +711,8 @@ video {
   height: 2.25rem;
 }
 
-.h-\[93vh\] {
-  height: 93vh;
+.h-\[90vh\] {
+  height: 90vh;
 }
 
 .h-fit {
@@ -1557,10 +1557,6 @@ video {
 
   .xl\:w-60 {
     width: 15rem;
-  }
-
-  .xl\:w-8 {
-    width: 2rem;
   }
 
   .xl\:w-\[60\%\] {

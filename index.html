@@ -138,21 +138,23 @@
 
     <!-- Apresentação -->
     <div class="bg-[#202020] py-20 xl:py-40" id="apresentacao">
-        <div class="w-[85%] xl:w-[80%] grid lg:grid-cols-2 items-center mx-auto gap-8">
+        <div class="w-[85%] xl:w-[80%] mx-auto">
 
-            <div class="max-lg:order-2 space-y-6">
-                <div class="max-lg:text-center font-teko tracking-wide">
-                    <p class="text-4xl xl:text-5xl text-[#cec35f]">RAFAEL CARBINATTI</p>
-                    <p class="text-xl xl:text-2xl text-[#a0a0a0] -mt-2">CREF: 129224-G/SP</p>
+            <div class="grid lg:grid-cols-2 items-center gap-8">
+                <div class="max-lg:order-2 space-y-6">
+                    <div class="max-lg:text-center font-teko tracking-wide">
+                        <p class="text-4xl xl:text-5xl text-[#cec35f]">RAFAEL CARBINATTI</p>
+                        <p class="text-xl xl:text-2xl text-[#a0a0a0] -mt-2">CREF: 129224-G/SP</p>
+                    </div>
+                    <div class="max-xl:text-sm text-[#e0e0e0] font-montserrat leading-7 tracking-widest space-y-6">
+                        <p>Para quem não me conhece, sou formado em Educação Física, pós-graduado em Gestão Esportiva e atualmente estou cursando pós-graduação em Medicina Esportiva.</p>
+                        <p>Utilizei minha experiência de 7 anos como Personal Trainer para desenvolver o melhor do meu método de treinamento, visando ajudar você a alcançar sua melhor forma em qualquer lugar do mundo.</p>
+                        <p><i>Agora você não estará mais sozinho(a) na busca pelos seus objetivos!</i></p>
+                    </div>
                 </div>
-                <div class="max-xl:text-sm text-[#e0e0e0] font-montserrat leading-7 tracking-widest space-y-6">
-                    <p>Para quem não me conhece, meu nome é Rafael Carbinatti. Sou formado em Educação Fisica / Pós-graduado em Gestão Esportiva / Pós Graduando em Medicina Esportiva.</p>
-                    <p>Possuo 7 anos atuando como Personal Trainer. Preparei o melhor do meu método de treinamento para ajudar você a alcançar sua melhor forma em qualquer lugar do mundo.</p>
-                    <p><i><b>Resumindo:</b> Agora você não vai mais estar sozinho(a), para alcançar seus objetivos.</i></p>
-                </div>
+    
+                <img class="aspect-video rounded-xl xl:rounded-2xl" src="arquivos/imagens/thumb.jpg">
             </div>
-
-            <img class="aspect-video rounded-xl xl:rounded-2xl" src="arquivos/imagens/thumb.jpg">
 
         </div>
     </div>
@@ -160,7 +162,7 @@
 
     <!-- Planos -->
     <div class="bg-[#24292d] py-16 xl:py-32" id="planos">
-        <div class="w-[85%] xl:[90%] 2xl:w-[80%] text-[#e0e0e0] mx-auto space-y-12">
+        <div class="w-[85%] xl:w-[90%] 2xl:w-[80%] text-[#e0e0e0] mx-auto space-y-12">
 
             <div class="text-center tracking-widest space-y-2">
                 <p class="text-4xl xl:text-7xl font-teko font-semibold">ESCOLHA SEU PLANO</p>
@@ -168,9 +170,8 @@
             </div>
 
             <div class="grid md:grid-cols-2 xl:grid-cols-4 font-teko gap-8">
-
                 <template x-for="(plano, index) in planos">
-                    <div :class="index == 1 ? 'text-[#202020] from-[#fff95e] to-[#cec35f]' : 'from-[#202020] to-[#24292d]'" class="flex flex-col rounded-3xl shadow-lg bg-gradient-to-br from-[1%] to-[60%] py-4">
+                    <div :class="index == 1 ? 'text-[#202020] from-[#fff95e] to-[#cec35f]' : 'bg-[#202020]'" class="flex flex-col rounded-3xl shadow-lg bg-gradient-to-br from-[1%] to-[60%] py-4">
                         <p class="text-4xl text-center font-semibold tracking-wide p-4" x-text="plano.nome"></p>
                         <div :class="index == 1 ? 'border-[#202020]' : 'border-[#e0e0e0]'" class="w-[75%] border mx-auto"></div>
                         <div class="flex justify-center font-semibold tracking-widest my-10">
@@ -178,30 +179,19 @@
                             <p class="text-7xl" x-text="plano.preco"></p>
                             <p class="flex items-end text-3xl mb-2">/MÊS</p>
                         </div>
-                        <div class="flex-1 flex flex-col items-center justify-center font-bold tracking-wide mb-10 space-y-4">
-                            <div class="flex items-center space-x-3" x-show="plano.vantagens[0]">
-                                <svg :class="index == 1 ? 'fill-[#24292d]' : 'fill-[#d3d3d3]'" class="w-4 h-4 shrink-0 -mt-1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
-                                <p x-text="plano.vantagens[0]"></p>
-                            </div>
-                            <div class="flex items-center space-x-3" x-show="plano.vantagens[1]">
-                                <svg :class="index == 1 ? 'fill-[#24292d]' : 'fill-[#d3d3d3]'" class="w-4 h-4 shrink-0 -mt-1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
-                                <p x-text="plano.vantagens[1]"></p>
-                            </div>
-                            <div class="flex items-center space-x-3" x-show="plano.vantagens[2]">
-                                <svg :class="index == 1 ? 'fill-[#24292d]' : 'fill-[#d3d3d3]'" class="w-4 h-4 shrink-0 -mt-1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
-                                <p x-text="plano.vantagens[2]"></p>
-                            </div>
-                            <div class="flex items-center space-x-3" x-show="plano.vantagens[3]">
-                                <svg :class="index == 1 ? 'fill-[#24292d]' : 'fill-[#d3d3d3]'" class="w-4 h-4 shrink-0 -mt-1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
-                                <p x-text="plano.vantagens[3]"></p>
-                            </div>
+                        <div class="flex-1 flex flex-col items-center justify-center font-bold tracking-wide mb-10 gap-4">
+                            <template x-for="vantagem in plano.vantagens">
+                                <div class="flex items-center space-x-3">
+                                    <svg :class="index == 1 ? 'fill-[#24292d]' : 'fill-[#d3d3d3]'" class="w-4 h-4 shrink-0 -mt-1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
+                                    <p x-text="vantagem"></p>
+                                </div>
+                            </template>
                         </div>
                         <div class="flex justify-center">
                             <a :class="index == 1 ? 'text-[#e0e0e0] bg-[#24292d]' : 'text-[#24292d] bg-[#e0e0e0]'" class="text-3xl font-semibold tracking-wide rounded-md px-6 pt-2 pb-1 mb-6" :href="plano.link">COMEÇAR</a>
                         </div>
                     </div>
                 </template>
-
             </div>
             
         </div>
@@ -211,7 +201,7 @@
     <!-- Depoimentos -->
     <div class="bg-[#24292d]" id="depoimentos">
         <div class="bg-[#202020] rounded-[3rem] py-16 xl:py-32">
-            <div class="w-[90%] xl:w-[80%] 2xl:w-[65%] text-[#e0e0e0] mx-auto space-y-16">
+            <div class="w-[85%] xl:w-[80%] 2xl:w-[65%] text-[#e0e0e0] mx-auto space-y-16">
 
                 <!-- Titulo -->
                 <div class="text-center tracking-widest space-y-2">
@@ -222,8 +212,8 @@
                 <!-- Depoimentos em Antes e Depois -->
                 <template x-for="(depoimento, index) in depoimentos_antes_depois">
                     <div class="grid md:grid-cols-2 items-center gap-8 xl:gap-16" x-data="{ blur: true }">
-                        <div :class="index % 2 == 0 ? 'order-2' : 'max-md:order-2'" class="space-y-2">
-                            <p class="text-4xl xl:text-5xl max-md:text-center font-teko font-medium tracking-wide" x-text="depoimento.nome"></p>
+                        <div :class="index % 2 == 0 ? 'order-2' : 'max-md:order-2'" class="max-md:text-center space-y-2">
+                            <p class="text-4xl xl:text-5xl font-teko font-medium tracking-wide" x-text="depoimento.nome"></p>
                             <p class="xl:text-lg font-montserrat font-light leading-7 tracking-widest" x-text="depoimento.texto"></p>
                         </div>
                         <div class="flex relative rounded-xl">
@@ -239,15 +229,7 @@
                 <!-- Separação com Halter -->
                 <div class="flex items-center space-x-4">
                     <div class="w-full h-0 border border-[#cec35f]"></div>
-                    <svg class="w-20" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 59.05">
-                        <rect x="21.38" width="11.53" height="59.05" rx="1.19" ry="1.19" style="fill:#cec35f;"/>
-                        <rect x="66.61" width="11.53" height="59.05" rx="1.19" ry="1.19" style="fill:#cec35f;"/>
-                        <path d="m9.37,8.51h8.97v42.02h-8.97c-.66,0-1.19-.53-1.19-1.19V9.71c0-.66.53-1.19,1.19-1.19Z" style="fill:#cec35f;"/>
-                        <path d="m1.19,23.66h4.83v11.74H1.19C.53,35.39,0,34.86,0,34.2v-9.36C0,24.19.53,23.66,1.19,23.66Z" style="fill:#cec35f;"/>
-                        <path d="m82.85,8.51h8.97v42.02h-8.97c-.66,0-1.19-.53-1.19-1.19V9.71c0-.66.53-1.19,1.19-1.19Z" transform="translate(173.49 59.05) rotate(-180)" style="fill:#cec35f;"/>
-                        <path d="m95.17,23.66h4.83v11.74h-4.83c-.66,0-1.19-.53-1.19-1.19v-9.36c0-.66.53-1.19,1.19-1.19Z" transform="translate(193.97 59.05) rotate(-180)" style="fill:#cec35f;"/>
-                        <rect x="45.78" y="16.5" width="8.57" height="26.04" rx=".74" ry=".74" transform="translate(79.59 -20.54) rotate(90)" style="fill:#cec35f;"/>
-                    </svg>
+                    <svg class="w-20" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 59.05"><rect x="21.38" width="11.53" height="59.05" rx="1.19" ry="1.19" style="fill:#cec35f;"/><rect x="66.61" width="11.53" height="59.05" rx="1.19" ry="1.19" style="fill:#cec35f;"/><path d="m9.37,8.51h8.97v42.02h-8.97c-.66,0-1.19-.53-1.19-1.19V9.71c0-.66.53-1.19,1.19-1.19Z" style="fill:#cec35f;"/><path d="m1.19,23.66h4.83v11.74H1.19C.53,35.39,0,34.86,0,34.2v-9.36C0,24.19.53,23.66,1.19,23.66Z" style="fill:#cec35f;"/><path d="m82.85,8.51h8.97v42.02h-8.97c-.66,0-1.19-.53-1.19-1.19V9.71c0-.66.53-1.19,1.19-1.19Z" transform="translate(173.49 59.05) rotate(-180)" style="fill:#cec35f;"/><path d="m95.17,23.66h4.83v11.74h-4.83c-.66,0-1.19-.53-1.19-1.19v-9.36c0-.66.53-1.19,1.19-1.19Z" transform="translate(193.97 59.05) rotate(-180)" style="fill:#cec35f;"/><rect x="45.78" y="16.5" width="8.57" height="26.04" rx=".74" ry=".74" transform="translate(79.59 -20.54) rotate(90)" style="fill:#cec35f;"/></svg>
                     <div class="w-full h-0 border border-[#cec35f]"></div>
                 </div>
 
@@ -276,23 +258,23 @@
 
     <!-- Aplicativo -->
     <div class="bg-[#24292d] py-16 xl:py-32" id="aplicativo">
-        <div class="w-[90%] xl:w-[60%] flex max-xl:flex-col text-[#e0e0e0] mx-auto gap-8">
+        <div class="w-[85%] xl:w-[70%] 2xl:w-[60%] flex max-xl:flex-col items-center justify-between text-[#e0e0e0] mx-auto gap-8">
 
-            <div class="space-y-4">
-                <p class="text-4xl xl:text-7xl font-teko font-semibold">SEU <span class="text-[#cec35f]">TREINO</span> NA PALPA DE SUAS <span class="text-[#cec35f]">MÃOS</span></p>
-                <template x-for="(vantagem, index) in vantagens_aplicativo">
-                    <div class="flex items-center space-x-3">
-                        <svg class="w-4 h-4 shrink-0 fill-[#d3d3d3]" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
-                        <p x-text="vantagem.vantagem"></p>
-                    </div>
-                </template>
-                <div class="flex">
-                    <a class="text-2xl xl:text-3xl text-[#3C381B] font-bold font-teko tracking-wide rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1 mt-4 xl:mt-8" href="#planos">COMECE AGORA!</a>
+            <div class="flex flex-col items-center xl:items-start space-y-8">
+                <p class="text-4xl xl:text-6xl max-xl:text-center font-teko font-semibold -mb-4">SEU <span class="text-[#cec35f]">TREINO</span> NA PALPA <br> DE SUAS <span class="text-[#cec35f]">MÃOS</span></p>
+                <div class="space-y-4">
+                    <template x-for="(vantagem, index) in vantagens_aplicativo">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-4 h-4 shrink-0 fill-[#d3d3d3]" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
+                            <p x-text="vantagem.vantagem"></p>
+                        </div>
+                    </template>
                 </div>
+                <a class="text-2xl xl:text-3xl text-[#202020] font-teko font-bold rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1" href="#planos">COMECE AGORA!</a>
             </div>
 
             <div class="relative flex items-center justify-center w-fit h-fit">
-                <img class="w-80 z-10" src="arquivos/icones/Mockup_Celular.png">
+                <img class="w-60 xl:w-80 z-10" src="arquivos/icones/Mockup_Celular.png">
                 <video class="absolute top-[9%] rounded-b-[2rem] max-w-[78%]" autoplay loop muted playinline>
                     <source src="arquivos/videos/aplicativo2.mp4" type="video/mp4">
                 </video>
@@ -312,9 +294,9 @@
 
     <!-- Perguntas Frequentes -->
     <div class="bg-[#24292d] py-12 lg:py-20" id="duvidas">
-        <div class="w-[90%] xl:w-[60%] text-[#e0e0e0] mx-auto">
+        <div class="w-[90%] xl:w-[60%] 2xl:w-[50%] text-[#e0e0e0] mx-auto">
 
-            <p class="text-5xl xl:text-7xl text-center font-teko font-medium tracking-wider">PERGUNTAS FREQUENTES</p>
+            <p class="text-5xl xl:text-6xl text-center font-teko font-medium tracking-wider">PERGUNTAS FREQUENTES</p>
 
             <div class="flex flex-col space-y-8">
                 <template x-for="(pergunta, index) in perguntas_frequentes">
@@ -373,18 +355,18 @@
                     </div>
     
                     <!-- Separação -->
-                    <div class="max-xl:w-full xl:h-60 border border-[#cec35f]"></div>
+                    <div class="max-xl:w-full xl:h-64 border border-[#cec35f]"></div>
     
                     <!-- Depoimentos -->
                     <div class="xl:w-2/5 space-y-8">
-                        <div class="flex items-end space-x-6">
+                        <div class="flex items-end gap-6">
                             <img class="w-16 xl:w-20" src="arquivos/imagens/depoimentos/1.png">
                             <div>
                                 <p class="text-xl font-teko tracking-wide ml-3">Marceli de Moraes Faria</p>
                                 <p class="text-xs xl:text-sm font-montserrat font-light rounded-t-xl rounded-br-xl shadow-md bg-[#24292d] p-3">Comecei a treinar, e não via resultado, mas depois das orientações e ensinamentos sobre a consciência muscular, os resultados vieram.</p>
                             </div>
                         </div>
-                        <div class="flex items-end space-x-6">
+                        <div class="flex items-end gap-6">
                             <div>
                                 <p class="text-xl text-right font-teko tracking-wide mr-3">Bruno Fernando Faria</p>
                                 <p class="text-xs xl:text-sm font-montserrat font-light rounded-t-xl rounded-bl-xl shadow-md bg-[#24292d] p-3">Excelente profissional, consegue conciliar os meus objetivos, com o meu tempo disponivel para treinar, montando treinos específicos!</p>

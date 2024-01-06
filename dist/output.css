@@ -572,10 +572,6 @@ video {
   bottom: 10%;
 }
 
-.bottom-\[5\%\] {
-  bottom: 5%;
-}
-
 .left-0 {
   left: 0px;
 }
@@ -711,8 +707,8 @@ video {
   height: 2.25rem;
 }
 
-.h-\[90vh\] {
-  height: 90vh;
+.h-\[93vh\] {
+  height: 93vh;
 }
 
 .h-fit {

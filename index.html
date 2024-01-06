@@ -261,21 +261,21 @@
         <div class="w-[85%] xl:w-[70%] 2xl:w-[60%] flex max-xl:flex-col items-center justify-between text-[#e0e0e0] mx-auto gap-8">
 
             <div class="flex flex-col items-center xl:items-start space-y-8">
-                <p class="text-4xl xl:text-6xl max-xl:text-center font-teko font-semibold -mb-4">SEU <span class="text-[#cec35f]">TREINO</span> NA PALPA <br> DE SUAS <span class="text-[#cec35f]">MÃOS</span></p>
+                <p class="text-4xl xl:text-6xl max-xl:text-center font-teko font-semibold tracking-wider -mb-4">SEU <span class="text-[#cec35f]">TREINO</span> NA PALPA <br> DE SUAS <span class="text-[#cec35f]">MÃOS</span></p>
                 <div class="space-y-4">
                     <template x-for="(vantagem, index) in vantagens_aplicativo">
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-4 h-4 shrink-0 fill-[#d3d3d3]" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
-                            <p x-text="vantagem.vantagem"></p>
+                        <div class="flex items-center space-x-4">
+                            <svg class="w-5 h-5 shrink-0 fill-[#d3d3d3]" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
+                            <p class="text-lg font-montserrat font-light tracking-wide" x-text="vantagem.vantagem"></p>
                         </div>
                     </template>
                 </div>
                 <a class="text-2xl xl:text-3xl text-[#202020] font-teko font-bold rounded bg-[#FFF95E] hover:-translate-y-1 duration-500 px-4 pt-2 pb-1" href="#planos">COMECE AGORA!</a>
             </div>
 
-            <div class="relative flex items-center justify-center">
+            <div class="relative flex items-center justify-center w-fit h-fit">
                 <img class="w-96 z-10" src="arquivos/imagens/mockup_celular.png">
-                <video class="absolute top-[19%] left-[22%] rounded-b-[2rem] max-w-[52%]" autoplay loop muted playinline>
+                <video class="absolute top-[14%] left-[15%] rounded-b-[2rem] max-w-[67%]" autoplay loop muted playinline>
                     <source src="arquivos/videos/aplicativo.mp4" type="video/mp4">
                 </video>
             </div>

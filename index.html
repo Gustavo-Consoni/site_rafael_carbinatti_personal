@@ -226,7 +226,7 @@
                     <div class="grid md:grid-cols-2 items-center justify-self-center gap-8 xl:gap-16" x-data="{ blur: true }">
                         <div :class="index % 2 == 0 ? 'order-2' : 'max-md:order-2'" class="max-md:text-center space-y-2">
                             <p class="text-4xl xl:text-5xl font-teko font-medium tracking-wide" x-text="depoimento.nome"></p>
-                            <p class="xl:text-lg font-montserrat font-extralight leading-7 tracking-widest" x-text="depoimento.texto"></p>
+                            <p class="text-sm xl:text-lg font-montserrat font-extralight leading-7 tracking-widest" x-text="depoimento.texto"></p>
                         </div>
                         <div class="flex relative rounded-xl">
                             <img class="w-1/2 rounded-l-xl" :src="depoimento.imagem_antes">
@@ -373,7 +373,7 @@
                     <div class="xl:w-2/5 space-y-8">
                         <template x-for="(depoimento, index) in depoimentos_rodape">
                             <div :class="{'flex-row-reverse': index % 2 == 0}" class="flex items-end gap-6">
-                                <img class="w-16 xl:w-20" :src="depoimento.imagem_perfil">
+                                <img class="w-16 xl:w-20 rounded-full" :src="depoimento.imagem_perfil">
                                 <div>
                                     <p :class="index == 1 ? 'ml-3' : 'text-right mr-3'" class="text-xl font-teko tracking-wide" x-text="depoimento.nome"></p>
                                     <p :class="index == 1 ? 'rounded-br-xl' : 'rounded-bl-xl'" class="text-xs xl:text-sm font-montserrat font-light shadow-md rounded-t-xl bg-[#24292d] p-3" x-text="depoimento.depoimento"></p>

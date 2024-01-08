@@ -14,7 +14,7 @@ document.addEventListener('alpine:init', () => {
                     '10 PLANILHAS PERSONALIZADAS',
                     '10 PLANILHAS PERSONALIZADAS',
                 ],
-                link: '',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=382&page=382',
             },
             {
                 nome: 'TRIMESTRAL',
@@ -25,7 +25,7 @@ document.addEventListener('alpine:init', () => {
                     '10 PLANILHAS PERSONALIZADAS',
                     '10 PLANILHAS PERSONALIZADAS',
                 ],
-                link: '',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=383&page=382',
             },
             {
                 nome: 'SEMESTRAL',
@@ -36,7 +36,7 @@ document.addEventListener('alpine:init', () => {
                     '10 PLANILHAS PERSONALIZADAS',
                     '10 PLANILHAS PERSONALIZADAS',
                 ],
-                link: '',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=384&page=382',
             },
             {
                 nome: 'ANUAL',
@@ -47,25 +47,25 @@ document.addEventListener('alpine:init', () => {
                     '10 PLANILHAS PERSONALIZADAS',
                     '10 PLANILHAS PERSONALIZADAS',
                 ],
-                link: '',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=25525&page=382',
             },
         ],
         depoimentos_antes_depois: [
             {
-                nome: 'Teste',
+                nome: 'Maria Clara',
                 texto: 'Um treino direcionado faz total diferença quando se fala em resultados sólidos! A partir do momento que parei de bater a cabeça sozinha por achar que sabia treinar e procurei um treino direcionado para meu objetivo, minha estética mudou com excelência!! Obrigada Rafa 💪🏼💪🏼',
                 imagem_antes: 'arquivos/imagens/antes-depois/1.jpg',
                 imagem_depois: 'arquivos/imagens/antes-depois/2.jpg',
             },
             {
-                nome: 'Teste',
-                texto: 'Um treino direcionado faz total diferença quando se fala em resultados sólidos! A partir do momento que parei de bater a cabeça sozinha por achar que sabia treinar e procurei um treino direcionado para meu objetivo, minha estética mudou com excelência!! Obrigada Rafa 💪🏼💪🏼',
+                nome: 'Pedrinho Eliseu',
+                texto: 'Quando cheguei para o Rafael estava recomeçando uma longa jornada, que só foi possível graças à clareza com a qual ele enxerga seus alunos e sobremaneira pela forma como conduz os treinos, adaptando-os à realidade. Sempre objetivo e comprometido, afirmo que pelas suas mãos encontrei mais do que buscava. Alto nível e alta performance, com extrema dedicação. Assino embaixo!',
                 imagem_antes: 'arquivos/imagens/antes-depois/3.jpg',
                 imagem_depois: 'arquivos/imagens/antes-depois/4.jpg',
             },
             {
-                nome: 'Teste',
-                texto: 'Um treino direcionado faz total diferença quando se fala em resultados sólidos! A partir do momento que parei de bater a cabeça sozinha por achar que sabia treinar e procurei um treino direcionado para meu objetivo, minha estética mudou com excelência!! Obrigada Rafa 💪🏼💪🏼',
+                nome: 'Ewelyn',
+                texto: 'Eu comecei a ver muito mais resultados quando tive um acompanhamento profissional mais próximo, com exercícios específicos para a minha necessidade e objetivo.',
                 imagem_antes: 'arquivos/imagens/antes-depois/5.jpg',
                 imagem_depois: 'arquivos/imagens/antes-depois/6.jpg',
             },
@@ -73,33 +73,33 @@ document.addEventListener('alpine:init', () => {
         depoimentos_texto: [
             {
                 nome: '',
-                imagem_perfil: '',
                 depoimento: '',
+                imagem_perfil: '',
             },
             {
                 nome: '',
-                imagem_perfil: '',
                 depoimento: '',
+                imagem_perfil: '',
             },
             {
                 nome: '',
-                imagem_perfil: '',
                 depoimento: '',
+                imagem_perfil: '',
             },
             {
                 nome: '',
-                imagem_perfil: '',
                 depoimento: '',
+                imagem_perfil: '',
             },
             {
                 nome: '',
-                imagem_perfil: '',
                 depoimento: '',
+                imagem_perfil: '',
             },
             {
                 nome: '',
-                imagem_perfil: '',
                 depoimento: '',
+                imagem_perfil: '',
             },
         ],
         vantagens_aplicativo: [
@@ -148,14 +148,14 @@ document.addEventListener('alpine:init', () => {
         ],
         depoimentos_rodape: [
             {
-                nome: '',
-                imagem_perfil: '',
-                depoimento: '',
+                nome: 'Débora Malaman',
+                depoimento: 'Rafael demonstra um alto nível de profissionalismo e dedicação com seus alunos!',
+                imagem_perfil: 'arquivos/imagens/depoimentos/1.jpg',
             },
             {
-                nome: '',
-                imagem_perfil: '',
-                depoimento: '',
+                nome: 'Débora Malaman',
+                depoimento: 'Rafael demonstra um alto nível de profissionalismo e dedicação com seus alunos!',
+                imagem_perfil: 'arquivos/imagens/depoimentos/2.jpg',
             },
         ],
 

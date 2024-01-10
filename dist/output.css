@@ -544,6 +544,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1552px) {
+  .container {
+    max-width: 1552px;
+  }
+}
+
 .fixed {
   position: fixed;
 }
@@ -576,8 +610,8 @@ video {
   bottom: 3%;
 }
 
-.bottom-\[58\%\] {
-  bottom: 58%;
+.bottom-\[57\%\] {
+  bottom: 57%;
 }
 
 .left-0 {
@@ -618,6 +652,10 @@ video {
 
 .order-2 {
   order: 2;
+}
+
+.float-left {
+  float: left;
 }
 
 .mx-auto {
@@ -669,6 +707,10 @@ video {
 
 .ml-3 {
   margin-left: 0.75rem;
+}
+
+.mr-12 {
+  margin-right: 3rem;
 }
 
 .mr-2 {
@@ -727,6 +769,10 @@ video {
   height: 2.25rem;
 }
 
+.h-\[564px\] {
+  height: 564px;
+}
+
 .h-\[85vh\] {
   height: 85vh;
 }
@@ -738,10 +784,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .max-h-\[80vh\] {
@@ -1240,6 +1282,10 @@ video {
   padding-top: 0.5rem;
 }
 
+.pt-40 {
+  padding-top: 10rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1574,12 +1620,20 @@ video {
     width: 1.75rem;
   }
 
+  .xl\:w-\[28rem\] {
+    width: 28rem;
+  }
+
   .xl\:w-\[60\%\] {
     width: 60%;
   }
 
   .xl\:w-\[70\%\] {
     width: 70%;
+  }
+
+  .xl\:w-\[75\%\] {
+    width: 75%;
   }
 
   .xl\:w-\[80\%\] {
@@ -1618,6 +1672,10 @@ video {
     border-radius: 1rem;
   }
 
+  .xl\:rounded-\[4rem\] {
+    border-radius: 4rem;
+  }
+
   .xl\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1645,6 +1703,10 @@ video {
 
   .xl\:pb-3 {
     padding-bottom: 0.75rem;
+  }
+
+  .xl\:pt-28 {
+    padding-top: 7rem;
   }
 
   .xl\:pt-9 {
@@ -1679,10 +1741,6 @@ video {
     font-size: 10rem;
   }
 
-  .xl\:text-\[4rem\] {
-    font-size: 4rem;
-  }
-
   .xl\:text-\[5rem\] {
     font-size: 5rem;
   }
@@ -1699,12 +1757,24 @@ video {
 }
 
 @media (min-width: 1552px) {
+  .\32xl\:w-\[32rem\] {
+    width: 32rem;
+  }
+
   .\32xl\:w-\[50\%\] {
     width: 50%;
   }
 
   .\32xl\:w-\[60\%\] {
     width: 60%;
+  }
+
+  .\32xl\:w-\[67\%\] {
+    width: 67%;
+  }
+
+  .\32xl\:w-\[75\%\] {
+    width: 75%;
   }
 
   .\32xl\:w-\[80\%\] {
@@ -1714,6 +1784,11 @@ video {
   .\32xl\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .\32xl\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 
   .\32xl\:text-\[12rem\] {

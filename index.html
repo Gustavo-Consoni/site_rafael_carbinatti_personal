@@ -19,13 +19,13 @@
 <body x-data="alpine" @scroll.window="updateScroll">
     
     <!-- Inicio -->
-    <div class="relative" id="inicio">
+    <div class="relative overflow-hidden" id="inicio">
 
         <!-- Fundo -->
         <img class="w-full h-[85vh] xl:h-screen object-cover" src="arquivos/imagens/fundo.jpg">
 
         <!-- Capa -->
-        <img class="absolute z-10 bottom-[10%] xl:bottom-0 xl:left-[8%] max-h-[80vh] xl:max-h-[105vh]" :src="window.innerWidth <= 1024 ? 'arquivos/imagens/inteiro2.png' : 'arquivos/imagens/inteiro.png'">
+        <img class="absolute z-10 bottom-[50%] xl:bottom-[42%] left-[50%] xl:left-[25%] 2xl:left-[30%] -translate-x-1/2 translate-y-1/2 max-h-[70vh] xl:max-h-[108vh]" src="arquivos/imagens/inteiro.png">
 
         <!-- Pelicula -->
         <div class="xl:hidden z-10 absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-stone-900 to-transparent"></div>
@@ -298,14 +298,14 @@
 
     <!-- Motivação -->
     <div class="bg-[#24292d]" id="motivacao">
-        <div class="rounded-[2rem] xl:rounded-[4rem] bg-[#202020] py-16 xl:py-24">
-            <div class="w-[85%] xl:w-[75%] 2xl:w-[75%] mx-auto">
+        <div class="rounded-[2rem] xl:rounded-[4rem] bg-[#202020] py-12 xl:py-24">
+            <div class="w-[85%] xl:w-[75%] 2xl:w-[60%] mx-auto">
 
                 <div class="flex max-xl:flex-col items-center gap-4 xl:gap-16">
-                    <img class="w-full xl:w-[28rem] 2xl:w-[32rem]" src="arquivos/imagens/motivacao.png">
+                    <img class="w-full xl:w-[28rem]" src="arquivos/imagens/motivacao.png">
                     <div class="max-xl:text-center xl:pt-28 space-y-4">
-                        <p class="text-4xl xl:text-5xl 2xl:text-6xl text-[#cec35f] font-teko font-semibold tracking-wider">IMAGINE UMA NOVA HISTÓRIA PARA SUA VIDA E ACREDITE NELA</p>
-                        <p class="xl:text-2xl 2xl:text-3xl text-[#e0e0e0] font-montserrat font-extralight tracking-widest">A melhor forma de ver o resultado da academia é treinando com frequência. Há dias bons e dias ruins nos treinos, mas é sempre melhor treinar do que deixar de movimentar o corpo!</p>
+                        <p class="text-4xl xl:text-5xl text-[#cec35f] font-teko font-semibold tracking-wider">IMAGINE UMA NOVA HISTÓRIA PARA SUA VIDA E ACREDITE NELA</p>
+                        <p class="xl:text-2xl text-[#e0e0e0] font-montserrat font-extralight tracking-widest">A melhor forma de ver o resultado da academia é treinando com frequência. Há dias bons e dias ruins nos treinos, mas é sempre melhor treinar do que deixar de movimentar o corpo!</p>
                     </div>
                 </div>
                 

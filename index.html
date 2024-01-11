@@ -22,10 +22,10 @@
     <div class="relative overflow-hidden" id="inicio">
 
         <!-- Fundo -->
-        <img class="w-full h-[85vh] xl:h-screen object-cover" src="arquivos/imagens/fundo.webp">
+        <img class="w-full h-[85vh] xl:h-screen object-cover" src="arquivos/imagens/fundo.webp" loading="lazy">
 
         <!-- Capa -->
-        <img class="absolute z-10 bottom-[50%] xl:bottom-[42%] left-[50%] xl:left-[25%] 2xl:left-[30%] -translate-x-1/2 translate-y-1/2 max-h-[70vh] xl:max-h-[108vh]" src="arquivos/imagens/inteiro.webp">
+        <img class="absolute z-10 bottom-[50%] xl:bottom-[42%] left-[50%] xl:left-[25%] 2xl:left-[30%] -translate-x-1/2 translate-y-1/2 max-h-[70vh] xl:max-h-[108vh]" src="arquivos/imagens/inteiro.webp" loading="lazy">
 
         <!-- Pelicula -->
         <div class="xl:hidden z-10 absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-stone-900 to-transparent"></div>
@@ -43,7 +43,7 @@
 
         <!-- Navbar -->
         <div :class="scrolled ? 'xl:py-6' : 'xl:pt-9 xl:pb-3'" class="bg-gradient-to-b from-black to-transparent w-full fixed top-0 z-30 flex items-center justify-between text-[#e2e2e2] duration-500 py-6 px-6 xl:px-12">
-            <img class="w-20 xl:w-24" src="arquivos/imagens/logo.webp">
+            <img class="w-20 xl:w-24" src="arquivos/imagens/logo.webp" loading="lazy">
             <div class="max-xl:hidden flex items-center text-2xl font-medium font-teko space-x-16">
                 <a :class="{'text-[#cec35f]': activeSection == 'inicio'}" class="duration-500 p-2" href="#inicio">INÍCIO</a>
                 <a :class="{'text-[#cec35f]': activeSection == 'apresentacao'}" class="duration-500 p-2" href="#apresentacao">APRESENTAÇÃO</a>
@@ -164,7 +164,7 @@
                         </div>
                     </div>
         
-                    <img class="aspect-video rounded-xl xl:rounded-2xl" src="arquivos/imagens/thumb.webp">
+                    <img class="aspect-video rounded-xl xl:rounded-2xl" src="arquivos/imagens/thumb.webp" loading="lazy">
                 </div>
     
             </div>
@@ -229,9 +229,9 @@
                             <p class="xl:text-lg font-montserrat font-extralight leading-7 tracking-widest" x-text="depoimento.texto"></p>
                         </div>
                         <div class="flex relative rounded-xl">
-                            <img class="w-1/2 rounded-l-xl" :src="depoimento.imagem_antes">
+                            <img class="w-1/2 rounded-l-xl" :src="depoimento.imagem_antes" loading="lazy">
                             <div :class="{'cursor-pointer': blur}" class="w-1/2 relative overflow-hidden rounded-r-xl">
-                                <img :class="{'blur': blur}" class="rounded-r-xl" :src="depoimento.imagem_depois">
+                                <img :class="{'blur': blur}" class="rounded-r-xl" :src="depoimento.imagem_depois" loading="lazy">
                                 <p class="flex flex-col items-center justify-center absolute inset-0 text-xl xl:text-2xl 2xl:text-3xl text-center font-teko font-semibold text-white tracking-widest bg-gray-900 bg-opacity-30" @click="blur = false" x-show="blur" x-transition.opacity.duration.500ms>CLIQUE PARA <br> VER A EVOLUÇÃO</p>
                             </div>
                         </div>
@@ -250,7 +250,7 @@
                     <template x-for="(item, index) in 6">
                         <div class="rounded-2xl shadow-md bg-[#24292d] px-8 pt-8 pb-12 space-y-6">
                             <div class="flex items-center space-x-6">
-                                <img class="w-16" src="arquivos/imagens/depoimento.webp">
+                                <img class="w-16" src="arquivos/imagens/depoimento.webp" loading="lazy">
                                 <div class="font-teko tracking-wide">
                                     <p class="text-3xl">Paula Abral</p>
                                     <div class="-mt-2">
@@ -286,7 +286,7 @@
             </div>
 
             <div class="relative flex items-center justify-center w-fit h-fit">
-                <img class="w-96 z-10" src="arquivos/imagens/mockup_celular.webp">
+                <img class="w-96 z-10" src="arquivos/imagens/mockup_celular.webp" loading="lazy">
                 <video class="absolute top-[14%] left-[15%] rounded-b-[2rem] max-w-[67%]" autoplay loop muted playinline>
                     <source src="arquivos/videos/aplicativo.mp4" type="video/mp4">
                 </video>
@@ -302,7 +302,7 @@
             <div class="w-[85%] xl:w-[75%] 2xl:w-[60%] mx-auto">
 
                 <div class="flex max-xl:flex-col items-center gap-4 xl:gap-16">
-                    <img class="w-full xl:w-[28rem]" src="arquivos/imagens/motivacao.webp">
+                    <img class="w-full xl:w-[28rem]" src="arquivos/imagens/motivacao.webp" loading="lazy">
                     <div class="max-xl:text-center xl:pt-28 space-y-4">
                         <p class="text-4xl xl:text-5xl text-[#cec35f] font-teko font-semibold tracking-wide">IMAGINE UMA NOVA HISTÓRIA PARA SUA VIDA E ACREDITE NELA</p>
                         <p class="xl:text-2xl text-[#e0e0e0] font-montserrat font-light tracking-widest">A melhor forma de ver o resultado da academia é treinando com frequência. Há dias bons e dias ruins nos treinos, mas é sempre melhor treinar do que deixar de movimentar o corpo!</p>
@@ -349,7 +349,7 @@
     
                     <!-- Motivação -->
                     <div class="xl:w-3/5 flex max-xl:flex-col items-center max-xl:text-center gap-8">
-                        <img class="w-48 xl:w-60 rounded-full" src="arquivos/imagens/perfil.webp">
+                        <img class="w-48 xl:w-60 rounded-full" src="arquivos/imagens/perfil.webp" loading="lazy">
                         <div class="font-teko font-medium tracking-wide">
                             <p class="text-4xl xl:text-5xl">RAFAEL CARBINATTI</p>
                             <p class="text-xl xl:text-2xl text-[#a0a0a0] -mt-2">CREF: 129224-G/SP</p>
@@ -383,7 +383,7 @@
                     <div class="flex flex-col xl:w-2/5 gap-8">
                         <template x-for="(depoimento, index) in depoimentos_rodape">
                             <div :class="{'flex-row-reverse': index % 2 == 0}" class="flex items-end gap-6">
-                                <img class="w-16 xl:w-20 rounded-full" :src="depoimento.imagem_perfil">
+                                <img class="w-16 xl:w-20 rounded-full" :src="depoimento.imagem_perfil" loading="lazy">
                                 <div>
                                     <p :class="index == 1 ? 'ml-3' : 'text-right mr-3'" class="text-xl font-teko tracking-wide" x-text="depoimento.nome"></p>
                                     <p :class="index == 1 ? 'rounded-br-xl' : 'rounded-bl-xl'" class="text-xs xl:text-sm font-montserrat font-light shadow-md rounded-t-xl bg-[#24292d] p-3" x-text="depoimento.depoimento"></p>

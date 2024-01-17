@@ -69,37 +69,43 @@ document.addEventListener('alpine:init', () => {
                 imagem_antes: 'arquivos/imagens/antes-depois/5.jpg',
                 imagem_depois: 'arquivos/imagens/antes-depois/6.jpg',
             },
+            {
+                nome: 'Sofia',
+                texto: 'Rafael é um excelente profissional, sempre disposto a inovar e personalizar os treinos de forma individualizada. Faço a consultoria para ganhar massa muscular e mesmo conciliando com a rotina corrida, obtive ótimos resultados!',
+                imagem_antes: 'arquivos/imagens/antes-depois/7.jpg',
+                imagem_depois: 'arquivos/imagens/antes-depois/8.jpg',
+            },
         ],
         depoimentos_texto: [
             {
-                nome: '',
-                depoimento: '',
-                imagem_perfil: '',
+                nome: 'Débora Malaman',
+                depoimento: 'Rafael demonstra um alto nível de profissionalismo e dedicação com seus alunos, entendendo suas necessidades individuais e adaptando os treinos de acordo. Além disso, sua atitude positiva e encorajadora cria um ambiente motivador e inspirador para alcançar os objetivos de condicionamento físico.',
+                imagem_perfil: 'arquivos/imagens/depoimentos/Debora-Malaman.jpg',
             },
             {
-                nome: '',
-                depoimento: '',
-                imagem_perfil: '',
+                nome: 'Jardel Dair',
+                depoimento: 'Treino com Rafael há muitos anos e mesmo após tanto tempo sempre há novas séries para exercitar a musculatura de diferentes formas e tornar o treino mais eficiente ! Profissional sério e dedicado que estimula o aluno  a se esforçar ao máximo em cada treino!',
+                imagem_perfil: 'arquivos/imagens/depoimentos/Jardel-Dair.jpg',
             },
             {
-                nome: '',
-                depoimento: '',
-                imagem_perfil: '',
+                nome: 'Juliana Borges',
+                depoimento: 'Rafa é um professor muito dedicado, sempre muito comprometido com os treinos, muito focado e persistente. Sempre pensando em dar aquela força a mais para nunca deixar o desânimo bater. Sempre tive dificuldade em manter a constância aos treinos, ele me ajudou a vencer esse desafio e a cada dia temos mais e melhores resultados!',
+                imagem_perfil: 'arquivos/imagens/depoimentos/Juliana-Borges.jpg',
             },
             {
-                nome: '',
-                depoimento: '',
-                imagem_perfil: '',
+                nome: 'João Luiz',
+                depoimento: 'O Rafael é um profissional diferenciado. Muito dedicado, ele direciona o atendimento de acordo com minhas evoluções e necessidades. Tive uma grande evolução após iniciar os treinos direcionados por ele, e pretendo seguir com os atendimentos pra continuar evoluindo.',
+                imagem_perfil: 'arquivos/imagens/depoimentos/João-Luiz.jpg',
             },
             {
-                nome: '',
-                depoimento: '',
-                imagem_perfil: '',
+                nome: 'Vanessa',
+                depoimento: 'Minha consultoria tem funcionado super bem há quase dois anos. O Rafael tem sido muito importante para minha regularidade na academia e melhora da qualidade de vida. Sabe insistir na dose certa e me fez evoluir de treinar 2 vezes na semana para a semana quase inteira.',
+                imagem_perfil: 'arquivos/imagens/depoimentos/Vanessa.jpg',
             },
             {
-                nome: '',
-                depoimento: '',
-                imagem_perfil: '',
+                nome: 'Gabriela Fuzaro',
+                depoimento: 'Sempre admirei o trabalho do Rafa antes mesmo de ter a oportunidade de treinar com ele.  É nítido seu profissionalismo, cuidado, paciência e inovação nos treinos. Ele tem a capacidade de me fazer gostar de cada etapa e me encoraja a sempre buscar o meu melhor!',
+                imagem_perfil: 'arquivos/imagens/depoimentos/Gabriela-Fuzaro.jpg',
             },
         ],
         vantagens_aplicativo: [
@@ -143,25 +149,25 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 pergunta: 'CONTINUO COM DÚVIDAS, COMO FAÇO PARA ESCLARECÊ-LAS ANTES DA AQUISIÇÃO?',
-                resposta: 'Meu suporte estará à sua disposição para responder todas as suas dúvidas. Só acessar o meu Instagram, e me enviar um direct. ',
+                resposta: 'Meu suporte estará à sua disposição para responder todas as suas dúvidas. Só acessar o meu Instagram, e me enviar um direct.',
             },
         ],
         depoimentos_rodape: [
             {
-                nome: 'Débora Malaman',
-                depoimento: 'Rafael demonstra um alto nível de profissionalismo e dedicação com seus alunos!',
-                imagem_perfil: 'arquivos/imagens/depoimentos/1.jpg',
+                nome: 'Bruna Vigáno',
+                depoimento: 'Rafael é um profissional dedicado, responsável e focado . Possui um alto nível de conhecimento! Sempre procurando o melhor método para atender as necessidades individuais dos seus alunos. Indico e recomendo!',
+                imagem_perfil: 'arquivos/imagens/depoimentos/Bruna-Vigano.jpg',
             },
             {
-                nome: 'Débora Malaman',
-                depoimento: 'Rafael demonstra um alto nível de profissionalismo e dedicação com seus alunos!',
-                imagem_perfil: 'arquivos/imagens/depoimentos/2.jpg',
+                nome: 'Roberta Nucci',
+                depoimento: 'O Rafa é um profissional muito competente, estudioso, antenado, sempre trazendo novidades pra as aulas. Ele é uma pessoa flexível, compreende as minhas necessidades e me  incentiva a buscar meu objetivo nos treinos.',
+                imagem_perfil: 'arquivos/imagens/depoimentos/Roberta-Nucci.jpg',
             },
         ],
 
         updateScroll() {
-            this.scrolled = window.scrollY > 0;
-            this.activeSection = this.getActiveSection();
+            this.scrolled = window.scrollY > 0
+            this.activeSection = this.getActiveSection()
         },
 
         getActiveSection() {
@@ -170,6 +176,7 @@ document.addEventListener('alpine:init', () => {
             const planos = document.getElementById('planos')
             const depoimentos = document.getElementById('depoimentos')
             const aplicativo = document.getElementById('aplicativo')
+            const motivacao = document.getElementById('motivacao')
             const duvidas = document.getElementById('duvidas')
         
             if (scrollPosition < apresentacao.offsetTop - 120)
@@ -180,8 +187,10 @@ document.addEventListener('alpine:init', () => {
                 return 'planos'
             else if (scrollPosition < aplicativo.offsetTop - 120)
                 return 'depoimentos'
-            else if (scrollPosition < duvidas.offsetTop - 120)
+            else if (scrollPosition < motivacao.offsetTop - 120)
                 return 'aplicativo'
+            else if (scrollPosition < duvidas.offsetTop - 120)
+                return ''
             else
                 return 'duvidas'
         },

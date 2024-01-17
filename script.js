@@ -64,13 +64,13 @@ document.addEventListener('alpine:init', () => {
                 imagem_depois: 'arquivos/imagens/antes-depois/4.jpg',
             },
             {
-                nome: 'Ewelyn',
+                nome: 'Ewelyn Camargo',
                 texto: 'Eu comecei a ver muito mais resultados quando tive um acompanhamento profissional mais próximo, com exercícios específicos para a minha necessidade e objetivo.',
                 imagem_antes: 'arquivos/imagens/antes-depois/5.jpg',
                 imagem_depois: 'arquivos/imagens/antes-depois/6.jpg',
             },
             {
-                nome: 'Sofia',
+                nome: 'Sofia Merino',
                 texto: 'Rafael é um excelente profissional, sempre disposto a inovar e personalizar os treinos de forma individualizada. Faço a consultoria para ganhar massa muscular e mesmo conciliando com a rotina corrida, obtive ótimos resultados!',
                 imagem_antes: 'arquivos/imagens/antes-depois/7.jpg',
                 imagem_depois: 'arquivos/imagens/antes-depois/8.jpg',

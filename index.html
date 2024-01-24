@@ -1,0 +1,404 @@
+<!doctype html>
+<html class="scroll-smooth" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="arquivos/imagens/logo.png">
+    <title>Consultoria - Rafael Carbinatti</title>
+    <!-- Tailwindcss -->
+    <link href="src/output.css" rel="stylesheet">
+    <!-- Alpinejs -->
+    <script defer src="script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Teko:wght@300;400;500;600;700&display=swap">
+</head>
+<body x-data="alpine" @scroll.window="updateScroll">
+    
+    <!-- Inicio -->
+    <div class="relative overflow-hidden" id="inicio">
+
+        <!-- Fundo -->
+        <img class="w-full h-[85vh] xl:h-screen object-cover" src="arquivos/imagens/fundo.webp" loading="lazy">
+
+        <!-- Capa -->
+        <img class="absolute z-10 bottom-[50%] xl:bottom-[42%] left-[50%] xl:left-[25%] 2xl:left-[28%] -translate-x-1/2 translate-y-1/2 max-h-[70vh] xl:max-h-[108vh]" src="arquivos/imagens/inteiro.webp" loading="lazy">
+
+        <!-- Pelicula -->
+        <div class="xl:hidden z-10 absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-stone-900 to-transparent"></div>
+
+        <!-- Texto -->
+        <div class="absolute z-20 inset-0 flex flex-col items-center xl:items-end justify-end xl:justify-center text-[#e2e2e2] p-12">
+            <div class="font-bold font-teko tracking-widest">
+                <p class="text-5xl xl:text-[5rem] 2xl:text-[6rem] max-xl:text-center -mb-3 xl:-mb-7 2xl:-mb-9 xl:ml-1">O SEU</p>
+                <p class="text-7xl xl:text-[12rem] 2xl:text-[14rem] text-transparent bg-clip-text bg-gradient-to-r from-[#FFF95E] from-[1%] to-[#F7F77B] to-[60%]">MELHOR</p>
+                <p class="text-5xl xl:text-[5rem] 2xl:text-[6rem] text-center xl:text-right -mt-3 xl:-mt-11 2xl:-mt-14">TREINO</p>
+            </div>
+            <p class="max-xl:hidden text-lg 2xl:text-xl text-right font-montserrat tracking-widest">Conheça uma metodologia de treino que vai lhe tirar da zona de conforto, <br> buscando praticidade, estímulos diversificados e resultados muito <br> mais rápidos comparado aos treinos convencionais.</p>
+            <a class="text-2xl xl:text-3xl text-[#202020] font-bold font-teko tracking-wide rounded bg-[#FFF95E] px-4 pt-2 pb-1 mt-4 xl:mt-6" href="#planos">COMECE AGORA!</a>
+        </div>
+
+        <!-- Navbar -->
+        <div :class="scrolled ? 'xl:py-6' : 'xl:pt-9 xl:pb-3'" class="bg-gradient-to-b from-black to-transparent w-full fixed top-0 z-30 flex items-center justify-between text-[#e2e2e2] duration-500 py-6 px-6 xl:px-12">
+            <img class="w-20 xl:w-24" src="arquivos/imagens/logo.webp" loading="lazy">
+            <div class="max-xl:hidden flex items-center text-2xl font-medium font-teko space-x-16">
+                <a :class="{'text-[#cec35f]': activeSection == 'inicio'}" class="duration-500 p-2" href="#inicio">INÍCIO</a>
+                <a :class="{'text-[#cec35f]': activeSection == 'apresentacao'}" class="duration-500 p-2" href="#apresentacao">APRESENTAÇÃO</a>
+                <a :class="{'text-[#cec35f]': activeSection == 'planos'}" class="duration-500 p-2" href="#planos">PLANOS</a>
+                <a :class="{'text-[#cec35f]': activeSection == 'depoimentos'}" class="duration-500 p-2" href="#depoimentos">DEPOIMENTOS</a>
+                <a :class="{'text-[#cec35f]': activeSection == 'aplicativo'}" class="duration-500 p-2" href="#aplicativo">APLICATIVO</a>
+                <a :class="{'text-[#cec35f]': activeSection == 'duvidas'}" class="duration-500 p-2" href="#duvidas">DÚVIDAS</a>
+            </div>
+            <button class="xl:hidden" @click="sidebar = !sidebar">
+                <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile -->
+        <div :class="{'-translate-x-64': sidebar}" class="xl:hidden fixed top-0 -right-64 z-40 w-64 h-full text-[#e2e2e2] bg-[#202020] duration-500 space-y-8">
+            <div class="flex items-center justify-between px-6 pt-6">
+                <p class="text-4xl font-teko font-bold">MENU</p>
+                <button @click="sidebar = !sidebar">
+                    <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col px-4 space-y-4">
+                <a :class="{'text-[#cec35f]': activeSection == 'inicio'}" class="flex items-center duration-500 p-2 space-x-4" href="#inicio" @click="sidebar = !sidebar">
+                    <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                        <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                    </svg>
+                    <p class="font-teko font-medium -mb-1.5">INÍCIO</p>
+                </a>
+                <a :class="{'text-[#cec35f]': activeSection == 'apresentacao'}" class="flex items-center duration-500 p-2 space-x-4" href="#apresentacao" @click="sidebar = !sidebar">
+                    <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+                    </svg>
+                    <p class="font-teko font-medium -mb-1">APRESENTAÇÃO</p>
+                </a>
+                <a :class="{'text-[#cec35f]': activeSection == 'planos'}" class="flex items-center duration-500 p-2 space-x-4" href="#planos" @click="sidebar = !sidebar">
+                    <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clip-rule="evenodd" />
+                    </svg>
+                    <p class="font-teko font-medium -mb-1.5">PLANOS</p>
+                </a>
+                <a :class="{'text-[#cec35f]': activeSection == 'depoimentos'}" class="flex items-center duration-500 p-2 space-x-4" href="#depoimentos" @click="sidebar = !sidebar">
+                    <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z" clip-rule="evenodd" />
+                    </svg>
+                    <p class="font-teko font-medium -mb-1">DEPOIMENTOS</p>
+                </a>
+                <a :class="{'text-[#cec35f]': activeSection == 'aplicativo'}" class="flex items-center duration-500 p-2 space-x-4" href="#aplicativo" @click="sidebar = !sidebar">
+                    <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" />
+                        <path fill-rule="evenodd" d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 0 1 7.5 19.875V4.125Z" clip-rule="evenodd" />
+                    </svg>
+                    <p class="font-teko font-medium -mb-1">APLICATIVO</p>
+                </a>
+                <a :class="{'text-[#cec35f]': activeSection == 'duvidas'}" class="flex items-center duration-500 p-2 space-x-4" href="#duvidas" @click="sidebar = !sidebar">
+                    <svg class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                    </svg>
+                    <p class="font-teko font-medium -mb-1">DÚVIDAS</p>
+                </a>
+            </div>
+            <div class="flex items-center justify-center text-white space-x-4">
+                <a href="https://api.whatsapp.com/send?phone=5519996059889" target="_blank">
+                    <svg class="w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z" fill="#e0e0e0"></path></g></svg>
+                </a>
+                <div class="border h-7"></div>
+                <a href="https://www.instagram.com/carbinatti_personal" target="_blank">
+                    <svg class="w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#e0e0e0"></path><path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#e0e0e0"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#e0e0e0"></path></g></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pelicula -->
+        <div class="xl:hidden fixed top-0 left-0 z-30 w-full h-full bg-black bg-opacity-50" x-show="sidebar" @click="sidebar = !sidebar" x-transition.opacity.duration.500ms x-cloak></div>
+
+        <!-- Redes Sociais -->
+        <div class="max-xl:hidden flex flex-col absolute z-20 left-0 bottom-[10%] bg-[#cec35f] rounded-r-xl p-4 gap-6">
+            <a href="https://api.whatsapp.com/send?phone=5519996059889" target="_blank">
+                <svg class="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z" fill="#202020"></path></g></svg>
+            </a>
+            <a href="https://www.instagram.com/carbinatti_personal" target="_blank">
+                <svg class="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#202020"></path><path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#202020"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#202020"></path></g></svg>
+            </a>
+        </div>
+
+        <!-- Setas Esquerda -->
+        <div class="absolute z-20 left-0 bottom-[57%] xl:bottom-[40%]">
+            <svg class="w-11 xl:w-20 opacity-70" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.48 250"><g style="opacity:.3;"><path d="m0,137.93c3.81-2.69,6.69-6.35,9.98-9.58,2.25-2.2,2.2-2.29,4.41-.03,4.65,4.77,9.23,9.62,13.93,14.34,8.13,8.15,16.35,16.22,24.51,24.34,2.47,2.46,4.55,5.29,7.35,7.42,1.2.91,1.29,1.88.13,3.02-4.12,4.04-8.19,8.12-12.26,12.21-.94.95-1.79.99-2.72.02-5.91-6.1-12.13-11.89-17.91-18.13-4.48-4.84-9.31-9.37-13.95-14.06-1.25-1.26-2.1-.54-3.05.38-3.5,3.36-6.71,7.02-10.43,10.15v-30.09Z" style="fill:#cec35f;"/></g><g style="opacity:.1;"><path d="m0,197.53c3.81-2.69,6.69-6.35,9.98-9.58,2.25-2.2,2.2-2.29,4.41-.03,4.65,4.77,9.23,9.62,13.93,14.34,8.13,8.15,16.35,16.22,24.51,24.34,2.47,2.46,4.55,5.29,7.35,7.42,1.2.91,1.29,1.88.13,3.02-4.12,4.04-8.19,8.12-12.26,12.21-.94.95-1.79.99-2.72.02-5.91-6.1-12.13-11.89-17.91-18.13-4.48-4.84-9.31-9.37-13.95-14.06-1.25-1.26-2.1-.54-3.05.38-3.5,3.36-6.71,7.02-10.43,10.15v-30.09Z" style="fill:#cec35f;"/></g><path d="m0,11.63C3.37,8.17,6.78,4.74,10.1,1.23c1.37-1.45,2.3-1.78,3.95-.08,14.19,14.51,28.49,28.91,42.78,43.33,1.22,1.23,2.55,2.35,3.85,3.5,1.05.92.94,1.65-.04,2.62-4.12,4.04-8.23,8.1-12.22,12.26-1.21,1.26-1.85,1.15-3.02-.04-9.56-9.66-19.2-19.24-28.81-28.85-.91-.91-1.93-1.75-2.71-2.76-1.32-1.7-2.33-1.22-3.62.08C6.89,34.66,3.42,37.94,0,41.27c0-9.88,0-19.76,0-29.64Z" style="fill:#cec35f;"/><g style="opacity:.6;"><path d="m61.06,111.76c-4.29-4.17-8.21-8.73-12.83-12.56-2.72-2.73-5.43-5.46-8.15-8.2-8.81-8.86-17.64-17.7-26.4-26.6-1.25-1.27-1.96-1.28-3.28-.03C6.81,67.8,3.9,71.89,0,75.01v29.64c3.48-3.47,7-6.91,10.43-10.43,1.15-1.18,1.98-1.29,3.16-.03,2.22,2.37,4.57,4.61,6.87,6.9.44.51.86,1.05,1.33,1.53,3.41,3.46,6.96,6.79,10.23,10.37,4.2,4.6,8.74,8.85,13.1,13.29.92.94,2.03,1.16,3.02.18,4.31-4.28,8.57-8.6,12.86-12.91.59-.59.66-1.2.06-1.78Z" style="fill:#cec35f;"/></g></svg>
+        </div>
+
+        <!-- Setas Direta -->
+        <div class="xl:hidden absolute z-20 right-0 bottom-[3%]">
+            <svg class="w-11 opacity-30" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.48 127.09"><path d="m61.48,11.63c-3.37-3.46-6.78-6.9-10.1-10.41-1.37-1.45-2.3-1.78-3.95-.08C33.24,15.65,18.94,30.05,4.65,44.47c-1.22,1.23-2.55,2.35-3.85,3.5-1.05.92-.94,1.65.04,2.62,4.12,4.04,8.23,8.1,12.22,12.26,1.21,1.26,1.85,1.15,3.02-.04,9.56-9.66,19.2-19.24,28.81-28.85.91-.91,1.93-1.75,2.71-2.76,1.32-1.7,2.33-1.22,3.62.08,3.36,3.39,6.83,6.67,10.25,10,0-9.88,0-19.76,0-29.64Z" style="fill:#cec35f;"/><g style="opacity:.6;"><path d="m.42,111.76c4.29-4.17,8.21-8.73,12.83-12.56,2.72-2.73,5.43-5.46,8.15-8.2,8.81-8.86,17.64-17.7,26.4-26.6,1.25-1.27,1.96-1.28,3.28-.03,3.59,3.42,6.5,7.51,10.4,10.63,0,9.88,0,19.76,0,29.64-3.48-3.47-7-6.91-10.43-10.43-1.15-1.18-1.98-1.29-3.16-.03-2.22,2.37-4.57,4.61-6.87,6.9-.44.51-.86,1.05-1.33,1.53-3.41,3.46-6.96,6.79-10.23,10.37-4.2,4.6-8.74,8.85-13.1,13.29-.92.94-2.03,1.16-3.02.18-4.31-4.28-8.57-8.6-12.86-12.91-.59-.59-.66-1.2-.06-1.78Z" style="fill:#cec35f;"/></g></svg>
+        </div>
+
+    </div>
+
+
+    <!-- Apresentação -->
+    <div class="bg-[#24292d]">
+        <div class="bg-[#202020] rounded-b-[2rem] xl:rounded-b-[4rem] py-20 xl:py-40" id="apresentacao">
+            <div class="w-[90%] xl:w-[80%] mx-auto">
+    
+                <div class="grid lg:grid-cols-2 items-center gap-8">
+                    <div class="max-lg:order-2 space-y-6">
+                        <div class="max-lg:text-center font-teko tracking-wide">
+                            <p class="text-4xl xl:text-5xl text-[#cec35f]">RAFAEL CARBINATTI</p>
+                            <p class="text-xl xl:text-2xl text-[#a0a0a0] -mt-2">CREF: 129224-G/SP</p>
+                        </div>
+                        <div class="max-xl:text-sm text-[#e0e0e0] font-montserrat leading-7 tracking-widest space-y-6">
+                            <p>Para quem não me conhece, sou formado em Educação Física, pós-graduado em Gestão Esportiva e atualmente estou cursando pós-graduação em Medicina Esportiva.</p>
+                            <p>Utilizei minha experiência de 7 anos como Personal Trainer para desenvolver o melhor do meu método de treinamento, visando ajudar você a alcançar sua melhor forma em qualquer lugar do mundo.</p>
+                            <p><i>Agora você não estará mais sozinho(a) na busca pelos seus objetivos!</i></p>
+                        </div>
+                    </div>
+        
+                    <img class="aspect-video rounded-xl xl:rounded-2xl" src="arquivos/imagens/thumb.webp" loading="lazy">
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Planos -->
+    <div class="bg-[#24292d] py-16 xl:py-32" id="planos">
+        <div class="w-[90%] 2xl:w-[80%] text-[#e0e0e0] mx-auto space-y-12">
+
+            <div class="text-center tracking-widest space-y-2">
+                <p class="text-4xl xl:text-7xl font-teko font-semibold">ESCOLHA SEU PLANO</p>
+                <p class="text-sm xl:text-lg font-montserrat font-light leading-7">Comece sua jornada alinhando os seus objetivos em direção a uma vida mais saudável e ativa</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 font-teko gap-8">
+                <template x-for="(plano, index) in planos">
+                    <div :class="index == 1 ? 'text-[#202020] from-[#fff95e] to-[#cec35f]' : 'bg-[#202020]'" class="flex flex-col rounded-3xl shadow-md bg-gradient-to-br from-[1%] to-[60%] py-8">
+                        <p class="text-5xl text-center font-semibold tracking-wide pb-4" x-text="plano.nome"></p>
+                        <div :class="index == 1 ? 'border-[#202020]' : 'border-[#e0e0e0]'" class="w-[80%] border mx-auto"></div>
+                        <div class="flex justify-center font-semibold tracking-widest mt-6">
+                            <p class="text-3xl mt-1 mr-2">R$</p>
+                            <p class="text-7xl" x-text="plano.preco"></p>
+                            <p class="flex items-end text-3xl mb-2">/MÊS</p>
+                        </div>
+                        <div class="flex-1 flex flex-col font-bold tracking-wide p-8 gap-4">
+                            <template x-for="vantagem in plano.vantagens">
+                                <div class="flex items-center space-x-3">
+                                    <svg :class="index == 1 ? 'fill-[#24292d]' : 'fill-[#d3d3d3]'" class="w-4 h-4 shrink-0 -mt-1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
+                                    <p x-text="vantagem"></p>
+                                </div>
+                            </template>
+                        </div>
+                        <div class="flex justify-center">
+                            <a :class="index == 1 ? 'text-[#e0e0e0] bg-[#24292d]' : 'text-[#24292d] bg-[#e0e0e0]'" class="text-2xl xl:text-3xl font-bold rounded shadow-md tracking-wider px-6 pt-2 pb-1" :href="plano.link">COMEÇAR</a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <!-- Depoimentos -->
+    <div class="bg-[#24292d]" id="depoimentos">
+        <div class="bg-[#202020] rounded-[2rem] xl:rounded-[4rem] py-16 xl:py-32">
+            <div class="w-[90%] xl:w-[70%] 2xl:w-[60%] text-[#e0e0e0] mx-auto space-y-12">
+
+                <!-- Titulo -->
+                <div class="text-center tracking-widest space-y-2">
+                    <p class="text-4xl md:text-5xl xl:text-7xl font-teko font-semibold">VEJA O <span class="text-[#cec35f]">RESULTADO</span> DOS MEUS <span class="text-[#cec35f]">ALUNOS</span></p>
+                    <p class="text-sm xl:text-lg font-montserrat font-light leading-7 tracking-widest">A evolução ocorre de forma lenta, e a persistência é a chave do sucesso</p>
+                </div>
+
+                <!-- Depoimentos em Antes e Depois -->
+                <div class="flex flex-col gap-8">
+                    <template x-for="(depoimento, index) in depoimentos_antes_depois">
+                        <div class="grid md:grid-cols-2 items-center justify-self-center gap-8 xl:gap-16" x-data="{ blur: true }">
+                            <div :class="index % 2 == 0 ? 'order-2' : 'max-md:order-2'" class="space-y-2">
+                                <p class="text-4xl xl:text-5xl max-xl:text-center font-teko font-medium tracking-wide" x-text="depoimento.nome"></p>
+                                <p class="xl:text-lg font-montserrat font-extralight leading-6 tracking-widest" x-text="depoimento.texto"></p>
+                            </div>
+                            <div class="flex relative rounded-xl">
+                                <img class="w-1/2 rounded-l-xl" :src="depoimento.imagem_antes" loading="lazy">
+                                <div :class="{'cursor-pointer': blur}" class="w-1/2 relative overflow-hidden rounded-r-xl">
+                                    <img :class="{'blur': blur}" class="rounded-r-xl" :src="depoimento.imagem_depois" loading="lazy">
+                                    <p class="flex flex-col items-center justify-center absolute inset-0 text-xl xl:text-2xl 2xl:text-3xl text-center font-teko font-semibold text-white tracking-widest bg-gray-900 bg-opacity-30" @click="blur = false" x-show="blur" x-transition.opacity.duration.500ms>CLIQUE PARA <br> VER A EVOLUÇÃO</p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Separação com Halter -->
+                <div class="flex items-center xl:py-6 2xl:py-12 space-x-4">
+                    <div class="w-full h-0 border border-[#cec35f]"></div>
+                    <svg class="w-24" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 59.05"><rect x="21.38" width="11.53" height="59.05" rx="1.19" ry="1.19" style="fill:#cec35f;"/><rect x="66.61" width="11.53" height="59.05" rx="1.19" ry="1.19" style="fill:#cec35f;"/><path d="m9.37,8.51h8.97v42.02h-8.97c-.66,0-1.19-.53-1.19-1.19V9.71c0-.66.53-1.19,1.19-1.19Z" style="fill:#cec35f;"/><path d="m1.19,23.66h4.83v11.74H1.19C.53,35.39,0,34.86,0,34.2v-9.36C0,24.19.53,23.66,1.19,23.66Z" style="fill:#cec35f;"/><path d="m82.85,8.51h8.97v42.02h-8.97c-.66,0-1.19-.53-1.19-1.19V9.71c0-.66.53-1.19,1.19-1.19Z" transform="translate(173.49 59.05) rotate(-180)" style="fill:#cec35f;"/><path d="m95.17,23.66h4.83v11.74h-4.83c-.66,0-1.19-.53-1.19-1.19v-9.36c0-.66.53-1.19,1.19-1.19Z" transform="translate(193.97 59.05) rotate(-180)" style="fill:#cec35f;"/><rect x="45.78" y="16.5" width="8.57" height="26.04" rx=".74" ry=".74" transform="translate(79.59 -20.54) rotate(90)" style="fill:#cec35f;"/></svg>
+                    <div class="w-full h-0 border border-[#cec35f]"></div>
+                </div>
+
+                <!-- Depoimentos em Texto -->
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <template x-for="(depoimento, index) in depoimentos_texto">
+                        <div class="rounded-2xl shadow-md bg-[#24292d] p-8 space-y-6">
+                            <div class="flex items-center space-x-6">
+                                <img class="w-16 rounded-full" :src="depoimento.imagem_perfil" loading="lazy">
+                                <div class="font-teko tracking-wide">
+                                    <p class="text-3xl" x-text="depoimento.nome"></p>
+                                    <div class="-mt-2">
+                                        <a class="text-[#a0a0a0]" href="#">@paula abral</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="font-montserrat font-light leading-7 tracking-widest" x-text="depoimento.depoimento"></p>
+                        </div>
+                    </template>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Aplicativo -->
+    <div class="bg-[#24292d] py-16 xl:py-32" id="aplicativo">
+        <div class="w-[90%] xl:w-[78%] 2xl:w-[65%] flex max-xl:flex-col items-center justify-between text-[#e0e0e0] mx-auto">
+
+            <div class="flex flex-col items-center xl:items-start space-y-8">
+                <p class="text-4xl md:text-5xl xl:text-7xl max-xl:text-center font-teko font-semibold tracking-wider -mb-4">SEU <span class="text-[#cec35f]">TREINO</span> NA PALPA <br> DE SUAS <span class="text-[#cec35f]">MÃOS</span></p>
+                <div class="max-xl:px-4 space-y-4">
+                    <template x-for="(vantagem, index) in vantagens_aplicativo">
+                        <div class="flex items-center space-x-4">
+                            <svg class="w-5 h-5 shrink-0 fill-[#d3d3d3]" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m48.49,77.12c-2.27,0-4.55-.83-6.33-2.49l-19.97-18.56c-3.35-3.12-3.54-8.36-.43-11.71,3.12-3.35,8.36-3.54,11.71-.43l14.92,13.86,40.48-39.24C79.7,7.24,65.7,0,50,0,22.39,0,0,22.39,0,50s22.39,50,50,50c27.61,0,50-22.39,50-50,0-5.77-.99-11.3-2.79-16.46l-42.25,40.95c-1.8,1.75-4.14,2.63-6.48,2.63Z"/></svg>
+                            <p class="xl:text-lg font-montserrat font-light tracking-wide" x-text="vantagem.vantagem"></p>
+                        </div>
+                    </template>
+                </div>
+                <a class="text-2xl xl:text-3xl text-[#202020] font-teko font-bold rounded shadow-md bg-[#FFF95E] px-6 pt-2 pb-1" href="#planos">COMECE AGORA!</a>
+            </div>
+
+            <div class="relative flex items-center justify-center w-fit h-fit">
+                <img class="w-96 z-10" src="arquivos/imagens/mockup_celular.webp" loading="lazy">
+                <video class="absolute top-[14%] left-[15%] rounded-b-[2rem] max-w-[67%]" autoplay loop muted playinline>
+                    <source src="arquivos/videos/aplicativo.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Motivação -->
+    <div class="bg-[#24292d]" id="motivacao">
+        <div class="rounded-[2rem] xl:rounded-[4rem] bg-[#202020] py-16 xl:py-28">
+            <div class="w-[90%] xl:w-[75%] 2xl:w-[60%] mx-auto">
+
+                <div class="flex max-xl:flex-col items-center gap-4 xl:gap-16">
+                    <img class="w-full xl:w-[28rem]" src="arquivos/imagens/motivacao.webp" loading="lazy">
+                    <div class="max-xl:text-center xl:pt-28 space-y-4">
+                        <p class="text-4xl xl:text-5xl text-[#cec35f] font-teko font-semibold tracking-wide">IMAGINE UMA NOVA HISTÓRIA PARA SUA VIDA E ACREDITE NELA</p>
+                        <p class="xl:text-2xl text-[#e0e0e0] font-montserrat font-light tracking-widest">A melhor forma de ver o resultado da academia é treinando com frequência. Há dias bons e dias ruins nos treinos, mas é sempre melhor treinar do que deixar de movimentar o corpo!</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Perguntas Frequentes -->
+    <div class="bg-[#24292d] py-12 lg:py-20" id="duvidas">
+        <div class="w-[90%] xl:w-[60%] 2xl:w-[50%] text-[#e0e0e0] mx-auto">
+
+            <p class="text-5xl xl:text-7xl text-center font-teko font-medium tracking-wider">PERGUNTAS FREQUENTES</p>
+
+            <div class="flex flex-col space-y-8">
+                <template x-for="(pergunta, index) in perguntas_frequentes">
+                    <button class="w-full text-left rounded-2xl shadow-lg bg-[#202020] px-7 pt-7 pb-6" @click="open != index ? open = index : open = null">
+                        <div class="flex items-start justify-between space-x-4">
+                            <p class="text-xl xl:text-2xl font-teko tracking-wide" x-text="pergunta.pergunta"></p>
+                            <svg :class="{ 'rotate-180': open == index }" class="w-6 xl:w-7 shrink-0 duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </div>
+                        <div x-show="open == index" x-collapse.duration.500ms x-cloak>
+                            <p class="max-xl:text-sm font-montserrat font-extralight tracking-widest mt-2" x-text="pergunta.resposta"></p>
+                        </div>
+                    </button>
+                </template>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Rodape -->
+    <div class="bg-[#24292d]" id="rodape">
+        <div class="bg-[#202020] rounded-t-[2rem] xl:rounded-t-[4rem] py-16 xl:py-24">
+            <div class="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[90%] 2xl:w-[80%] text-[#e0e0e0] mx-auto">
+    
+                <div class="flex max-xl:flex-col items-center gap-12">
+    
+                    <!-- Motivação -->
+                    <div class="xl:w-3/5 flex max-xl:flex-col items-center max-xl:text-center gap-8">
+                        <img class="w-48 xl:w-60 rounded-full" src="arquivos/imagens/perfil.webp" loading="lazy">
+                        <div class="font-teko font-medium tracking-wide">
+                            <p class="text-4xl xl:text-5xl">RAFAEL CARBINATTI</p>
+                            <p class="text-xl xl:text-2xl text-[#a0a0a0] -mt-2">CREF: 129224-G/SP</p>
+                            <div class="xl:hidden flex items-center justify-center pt-2 gap-4">
+                                <a href="https://api.whatsapp.com/send?phone=5519996059889" target="_blank">
+                                    <svg class="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z" fill="#e0e0e0"></path></g></svg>
+                                </a>
+                                <a href="https://www.instagram.com/carbinatti_personal" target="_blank">
+                                    <svg class="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#e0e0e0"></path><path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#e0e0e0"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#e0e0e0"></path></g></svg>
+                                </a>
+                            </div>
+                            <p class="max-xl:text-sm font-montserrat font-light tracking-widest my-4">Eu vou estar junto com você nessa caminhada em direção ao corpo e a saúde que você tanto almeja. Vou pegar na sua mão e te mostrar cada passo que deverá dar para conseguir com êxito</p>
+                            <div class="flex max-xl:flex-col-reverse items-center max-xl:justify-center gap-4">
+                                <a class="text-2xl xl:text-3xl text-[#202020] font-teko font-bold rounded shadow-md bg-[#FFF95E] px-6 pt-2 pb-1" href="#planos">COMECE AGORA!</a>
+                                <div class="max-xl:hidden flex items-center gap-4">
+                                    <a href="https://api.whatsapp.com/send?phone=5519996059889" target="_blank">
+                                        <svg class="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z" fill="#e0e0e0"></path></g></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/carbinatti_personal" target="_blank">
+                                        <svg class="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#e0e0e0"></path><path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#e0e0e0"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#e0e0e0"></path></g></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Separação -->
+                    <div class="max-xl:w-full xl:h-72 border border-[#cec35f]"></div>
+    
+                    <!-- Depoimentos -->
+                    <div class="flex flex-col xl:w-2/5 gap-8">
+                        <template x-for="(depoimento, index) in depoimentos_rodape">
+                            <div :class="{'flex-row-reverse': index % 2 == 0}" class="flex items-end gap-6">
+                                <img class="w-16 xl:w-20 rounded-full" :src="depoimento.imagem_perfil" loading="lazy">
+                                <div>
+                                    <p :class="index == 1 ? 'ml-3' : 'text-right mr-3'" class="text-xl xl:text-2xl font-teko tracking-wide" x-text="depoimento.nome"></p>
+                                    <p :class="index == 1 ? 'rounded-br-xl' : 'rounded-bl-xl'" class="text-xs xl:text-sm font-montserrat font-light shadow-md rounded-t-xl bg-[#24292d] p-3" x-text="depoimento.depoimento"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

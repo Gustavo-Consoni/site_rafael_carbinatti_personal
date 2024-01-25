@@ -122,9 +122,14 @@ document.addEventListener('alpine:init', () => {
                 imagem_perfil: 'arquivos/imagens/depoimentos/Sabrina-Montoni.jpg',
             },
             {
-                nome: "Bianca-D'Ottaviano",
+                nome: "Bianca D'Ottaviano",
                 depoimento: 'Rafael exerce um papel fundamental na minha jornada pela saúde física. Sua orientação, motivação e conhecimento têm sido indispensáveis para eu alcançar meus objetivos. É notável a capacidade de adaptar os treinos às minhas necessidades, sempre otimizando a minha busca por uma vida mais saudável e ativa.',
                 imagem_perfil: "arquivos/imagens/depoimentos/Bianca-D'Ottaviano.jpg",
+            },
+            {
+                nome: "Willians Pizani",
+                depoimento: 'Sou aluno da consultoria do Rafa ele é um profissional muito qualificado e alto nível de conhecimento, muito comprometido com seus alunos, com isso estou obtendo resultados surpreendentes que treinando sem o acompanhamento não estava conseguindo.',
+                imagem_perfil: "arquivos/imagens/depoimentos/Willians-Pizani.jpg",
             },
         ],
         vantagens_aplicativo: [

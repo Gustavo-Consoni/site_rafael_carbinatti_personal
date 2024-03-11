@@ -21,7 +21,7 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'TRIMESTRAL',
-                preco: '127',
+                preco: '128',
                 vantagens: [
                     '2 Planilhas Completas',
                     'Planejamento Semanal De Treino',
@@ -34,7 +34,7 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'SEMESTRAL',
-                preco: '120',
+                preco: '121',
                 vantagens: [
                     '4 Planilhas Completas',
                     'Planejamento Semanal De Treino',
@@ -47,7 +47,7 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'ANUAL',
-                preco: '100',
+                preco: '101',
                 vantagens: [
                     '8 Planilhas Completas',
                     'Planejamento Semanal De Treino',

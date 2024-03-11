@@ -186,11 +186,15 @@
                     <div :class="index == 1 ? 'text-[#202020] from-[#fff95e] to-[#cec35f]' : 'bg-[#202020]'" class="flex flex-col rounded-3xl shadow-md bg-gradient-to-br from-[1%] to-[60%] py-8">
                         <p class="text-5xl text-center font-semibold tracking-wide pb-4" x-text="plano.nome"></p>
                         <div :class="index == 1 ? 'border-[#202020]' : 'border-[#e0e0e0]'" class="w-[80%] border mx-auto"></div>
-                        <div class="flex justify-center font-semibold tracking-widest mt-6">
-                            <p class="text-3xl mt-1 mr-2">R$</p>
-                            <p class="text-7xl" x-text="plano.preco"></p>
-                            <p class="flex items-end text-3xl mb-2">/MÊS</p>
+                        <div class="flex justify-center font-semibold tracking-widest gap-2 mt-6">
+                            <p class="text-3xl mt-1">R$</p>
+                            <p class="text-7xl" x-text="plano.preco_reais"></p>
+                            <div>
+                                <p class="text-2xl mb-4" x-text="plano.preco_centavos"></p>
+                                <p class="flex items-end text-2xl -mt-5">/MÊS</p>
+                            </div>
                         </div>
+                        <p class="text-xl text-center font-semibold tracking-wide" x-text="plano.juros"></p>
                         <div class="flex-1 flex flex-col font-bold tracking-wider p-8 gap-4">
                             <template x-for="vantagem in plano.vantagens">
                                 <div class="flex items-center space-x-3">

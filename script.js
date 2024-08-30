@@ -20,7 +20,7 @@ document.addEventListener('alpine:init', () => {
                     'App com vídeo explicativo de execução dos exercícios',
                     'Acompanhamento via App ou Whats até a validade do plano',
                 ],
-                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=382&page=382',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=80057&page=80057',
             },
             {
                 nome: 'TRIMESTRAL',
@@ -36,7 +36,7 @@ document.addEventListener('alpine:init', () => {
                     'App com vídeo explicativo de execução dos exercícios',
                     'Acompanhamento via App ou Whats até a validade do plano',
                 ],
-                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=383&page=382',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=80058&page=80057',
             },
             {
                 nome: 'SEMESTRAL',
@@ -52,7 +52,7 @@ document.addEventListener('alpine:init', () => {
                     'App com vídeo explicativo de execução dos exercícios',
                     'Acompanhamento via App ou Whats até a validade do plano',
                 ],
-                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=384&page=382',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=80059&page=80057',
             },
             {
                 nome: 'ANUAL',
@@ -68,7 +68,7 @@ document.addEventListener('alpine:init', () => {
                     'App com vídeo explicativo de execução dos exercícios',
                     'Acompanhamento via App ou Whats até a validade do plano',
                 ],
-                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=25525&page=382',
+                link: 'https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=80060&page=80057',
             },
         ],
         depoimentos_antes_depois: [

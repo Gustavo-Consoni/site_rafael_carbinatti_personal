@@ -12,7 +12,7 @@ document.addEventListener('alpine:init', () => {
                 preco_centavos: ', 00',
                 juros: 'Em até 1x sem juros',
                 vantagens: [
-                    'Preço promocional R$ 150,00 à vista',
+                    'Preço promocional R$ 180,00 à vista',
                     '1 planilha completa',
                     'Planejamento semanal de treino',
                     'Treino individualizado',
@@ -28,7 +28,7 @@ document.addEventListener('alpine:init', () => {
                 preco_centavos: ', 00',
                 juros: 'Em até 3x sem juros',
                 vantagens: [
-                    'Preço promocional R$ 359,90 à vista',
+                    'Preço promocional R$ 495,00 à vista',
                     '2 planilhas completas',
                     'Planejamento semanal de treino',
                     'Treino individualizado',
@@ -44,7 +44,7 @@ document.addEventListener('alpine:init', () => {
                 preco_centavos: ', 00',
                 juros: 'Em até 6x sem juros',
                 vantagens: [
-                    'Preço promocional R$ 649,90 à vista',
+                    'Preço promocional R$ 900,00 à vista',
                     '4 planilhas completas',
                     'Planejamento semanal de treino',
                     'Treino individualizado',
@@ -60,7 +60,7 @@ document.addEventListener('alpine:init', () => {
                 preco_centavos: ', 00',
                 juros: 'Em até 12x sem juros',
                 vantagens: [
-                    'Preço promocional R$ 1000,00 à vista',
+                    'Preço promocional R$ 1620,00 à vista',
                     '8 planilhas completas',
                     'Planejamento semanal de treino',
                     'Treino individualizado',
@@ -233,4 +233,5 @@ document.addEventListener('alpine:init', () => {
 
     }))
 })
+
 

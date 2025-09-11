@@ -8,7 +8,7 @@ document.addEventListener('alpine:init', () => {
         planos: [
             {
                 nome: 'MENSAL',
-                preco_reais: '150',
+                preco_reais: '180',
                 preco_centavos: ', 00',
                 juros: 'Em até 1x sem juros',
                 vantagens: [
@@ -24,8 +24,8 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'TRIMESTRAL',
-                preco_reais: '127',
-                preco_centavos: ', 28',
+                preco_reais: '165',
+                preco_centavos: ', 00',
                 juros: 'Em até 3x sem juros',
                 vantagens: [
                     'Preço promocional R$ 359,90 à vista',
@@ -40,8 +40,8 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'SEMESTRAL',
-                preco_reais: '120',
-                preco_centavos: ', 09',
+                preco_reais: '150',
+                preco_centavos: ', 00',
                 juros: 'Em até 6x sem juros',
                 vantagens: [
                     'Preço promocional R$ 649,90 à vista',
@@ -56,8 +56,8 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'ANUAL',
-                preco_reais: '100',
-                preco_centavos: ', 68',
+                preco_reais: '135',
+                preco_centavos: ', 00',
                 juros: 'Em até 12x sem juros',
                 vantagens: [
                     'Preço promocional R$ 1000,00 à vista',
@@ -233,3 +233,4 @@ document.addEventListener('alpine:init', () => {
 
     }))
 })
+

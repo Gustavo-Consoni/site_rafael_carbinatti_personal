@@ -8,7 +8,7 @@ document.addEventListener('alpine:init', () => {
         planos: [
             {
                 nome: 'MENSAL',
-                preco_reais: '180',
+                preco_reais: '165',
                 preco_centavos: ', 00',
                 juros: 'Em até 1x sem juros',
                 vantagens: [
@@ -23,7 +23,7 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'TRIMESTRAL',
-                preco_reais: '165',
+                preco_reais: '133',
                 preco_centavos: ', 00',
                 juros: 'Em até 3x sem juros',
                 vantagens: [
@@ -38,8 +38,8 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'SEMESTRAL',
-                preco_reais: '150',
-                preco_centavos: ', 00',
+                preco_reais: '115',
+                preco_centavos: ', 83',
                 juros: 'Em até 6x sem juros',
                 vantagens: [
                     '4 planilhas completas',
@@ -53,8 +53,8 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 nome: 'ANUAL',
-                preco_reais: '135',
-                preco_centavos: ', 00',
+                preco_reais: '91',
+                preco_centavos: ', 58',
                 juros: 'Em até 12x sem juros',
                 vantagens: [
                     '8 planilhas completas',
